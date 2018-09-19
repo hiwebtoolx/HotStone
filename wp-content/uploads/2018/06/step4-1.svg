@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>cancel</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#C85D99" offset="0%"></stop>
+            <stop stop-color="#B56A94" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="-About-us-" transform="translate(-720.000000, -3132.000000)" fill="url(#linearGradient-1)" fill-rule="nonzero">
+            <g id="cancel" transform="translate(720.000000, 3132.000000)">
+                <path d="M30,0 C13.4314453,0 0,13.4314453 0,30 C0,46.5685547 13.4314453,60 30,60 C46.5685547,60 60,46.5685547 60,30 C59.9806641,13.4394141 46.5605859,0.0193359375 30,0 Z M30,57.5000391 C14.8121484,57.5000391 2.49996094,45.1878516 2.49996094,30 C2.49996094,14.8121484 14.8121484,2.49996094 30,2.49996094 C45.1878516,2.49996094 57.5000391,14.8121484 57.5000391,30 C57.4828125,45.1807031 45.1807031,57.4828125 30,57.5000391 Z" id="Shape"></path>
+                <polygon id="Shape" points="45.9099609 15.85875 44.1425391 14.0900391 30 28.2324609 15.8574609 14.0900391 14.0900391 15.85875 28.2324609 30 14.0900391 44.14125 15.8574609 45.9099609 30 31.7675391 44.1425391 45.9099609 45.9099609 44.14125 31.7675391 30"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
