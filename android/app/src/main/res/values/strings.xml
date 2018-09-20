@@ -1,0 +1,243 @@
+<resources>
+    <string name="app_name">HotStone</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string-array name="list_preference_entries">
+        <item>Entry 1</item>
+        <item>Entry 2</item>
+        <item>Entry 3</item>
+    </string-array>
+
+    <string-array name="list_preference_entry_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="multi_select_list_preference_default_value" />
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_notifications">Notifications</string>
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
+    <string name="acrylic_line2">I understand Acrylic or Gel nails may lead to serious nail breaks, infection and loss of the natural nail. Allergic reactions have also been reported with Acrylic or Gel nails, resulting in serious inflammation and thinning in pain and sensitivity, can last more than a year.</string>
+    <string name="acrylic_line1">I understand that Acrylic or Gel nails may look nice and perfect for special occasions and they transform the look of our hands.</string>
+    <string name="age">Age</string>
+    <string name="lifestyle">Lifestyle</string>
+    <string name="active">Active</string>
+    <string name="sedentary">Sedentary</string>
+    <string name="pregnancies">Pregnancies</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="ar">عربي</string>
+    <string name="en">EN</string>
+    <string name="change_lang">Restart The application to view language</string>
+    <string name="treatment_given">Treatment Given</string>
+    <string name="retail">Retail Product</string>
+    <string name="comments">Comments</string>
+    <string name="submit">Submit</string>
+    <string name="full_name">Full Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="e_mail_address">E-mail Address</string>
+    <string name="technician_name">ُTechnician Name</string>
+    <string name="how_do_you_prefer_your_massage_pressure">How Do You Prefer Your Massage Pressure</string>
+    <string name="massage_do_you_prefer">Massage Do You Prefer</string>
+    <string name="are_you_pregnant">Are You Pregnant</string>
+    <string name="soft">Soft</string>
+    <string name="moderate">Moderate</string>
+    <string name="firm">Firm</string>
+    <string name="customer_s_health">Customer\'s Health</string>
+    <string name="hammam_and_body_scrub">Hammam and body scrub</string>
+    <string name="facial_treatment">Facial Treatment</string>
+    <string name="acrylic_and_gel">Acrylic And Gel</string>
+    <string name="keratin_consultation">keratin consultation</string>
+    <string name="massage_consultation">Massage consultation</string>
+    <string name="manicure_pedicure">Manicure Pedicure</string>
+    <string name="visits">Visits</string>
+    <string name="search">Search</string>
+    <string name="logout">Logout</string>
+    <string name="medical_history">Medical History</string>
+    <string name="heart_disease">Heart Disease</string>
+    <string name="chest_pain">Chest Pain</string>
+    <string name="high_blood_pressure">High Blood Pressure</string>
+    <string name="varicose_veins">Varicose Veins</string>
+    <string name="allergies">Allergies</string>
+    <string name="asthma">Asthma</string>
+    <string name="dizziness">Dizziness</string>
+    <string name="bronchitis">Bronchitis</string>
+    <string name="chemotherapy">Chemotherapy</string>
+    <string name="diabetes">Diabetes</string>
+    <string name="e_pilepsy">E Pilepsy</string>
+    <string name="other_diseases">Other diseases</string>
+    <string name="other_diseases_desc">Other diseases Desc</string>
+    <string name="allergic">Allergic</string>
+    <string name="what_causes_you_allergies">What Causes You Allergies</string>
+    <string name="therapist_s_signature">Therapist’s Signature</string>
+    <string name="exercise">Exercise</string>
+    <string name="how_do_you_prefer_the_scrubbing">How do you prefer the scrubbing?</string>
+    <string name="are_you_recently_delivered">Are You Recently Delivered?</string>
+    <string name="did_you_have_a_surgery_operation_during_the_last_3_months">Did You Have A Surgery Operation During The Last 3 Months?</string>
+    <string name="did_you_do_a_peeling">Did you do a peeling for your body or your face?</string>
+    <string name="when">When</string>
+    <string name="when_was_your_last_laser_session_t_you_did">When was your last laser session t you did?</string>
+    <string name="which_hammam_or_body_scrub_do_you_prefer">Which Hammam or Body scrub do you prefer?</string>
+    <string name="client_signature">Client Signature</string>
+    <string name="when_last_time_you_remove_the_hair_by_waxing_or_halawa_or_shaving">When last time you remove the hair by waxing or halawa or shaving?</string>
+    <string name="title_activity_login2">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="search_dialog">Search...</string>
+    <string name="search_dialog1">Search...</string>
+    <string name="enter_phone">Enter phone number..</string>
+    <string name="cust_search">Customer\'s Search...</string>
+    <string name="skin_analysis">Skin Analysis</string>
+    <string name="type">Type</string>
+    <string name="color">Color</string>
+    <string name="texture">Texture</string>
+    <string name="circulation">Circulation</string>
+    <string name="muscle_tone">Muscle Tone</string>
+    <string name="elasticity">Elasticity</string>
+    <string name="imperfections_irregularities">Imperfections Irregularities</string>
+    <string name="wrinkles">Wrinkles</string>
+    <string name="pores">Pores</string>
+    <string name="discoloration">Discoloration</string>
+    <string name="present_skincare_routine">Present Skincare Routine</string>
+    <string name="hands">Hands</string>
+    <string name="feet">Feet</string>
+    <string name="miscellaneous">Miscellaneous</string>
+    <string name="notes">Notes</string>
+    <string name="did_you_color_your_hair">Did You Color Your Hair</string>
+    <string name="did_you_make_highlight">Did You Make Highlight</string>
+    <string name="did_you_put_henna">Did You Put Henna</string>
+    <string name="did_you_make_hair_straightening">Did You Make Hair Straightening</string>
+    <string name="did_you_make_removing_color">Did You Make Removing Color</string>
+    <string name="did_you_make_keratin_before">Did You Make Keratin Before</string>
+    <string name="hair_specialist_name">Hair Specialist Name</string>
+    <string name="product_name">Product Name</string>
+    <string name="cuts">Cuts</string>
+    <string name="eczema">Eczema</string>
+    <string name="psoriasis">Psoriasis</string>
+    <string name="veins_problems">Veins Problems</string>
+    <string name="arthritis">Arthritis</string>
+    <string name="medical_oedema">Medical Oedema</string>
+    <string name="others">Others</string>
+    <string name="nail_and_skin_conditions">Nail and Skin Conditions</string>
+    <string name="cuticle_condition">Cuticle Condition</string>
+    <string name="excellent">Excellent</string>
+    <string name="good">Good</string>
+    <string name="fair">Fair</string>
+    <string name="poor">Poor</string>
+    <string name="blood_circulation">Blood Circulation</string>
+    <string name="normal">Normal</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="about">About</string>
+    <string name="welcome_to_hot_stone">Welcome To Hot Stone</string>
+    <string name="clear">Clear</string>
+    <string name="recent_fractures_minimum_3_months">Recent Fractures (Minimum 3 months)</string>
+    <string name="take_a_moment_to_evaluate_this_service">Take a moment to evaluate this service</string>
+    <string name="new_client">New Client</string>
+    <string name="add_new">Add New Client</string>
+    <string name="not_found_user">User Not Found! Please add user first</string>
+    <string name="added">Successfully Added</string>
+    <string name="thank_you">Thank You!! :)</string>
+    <string name="invalid_user">Invalid Username Or Password</string>
+    <string name="Combination">Combination</string>
+    <string name="Colour">Colour</string>
+    <string name="Muscle_tone">Muscle tone</string>
+    <string name="title_activity_webview">Webview</string>
+    <string name="oily">Oily</string>
+    <string name="dry">Dry</string>
+    <string name="dark">Dark</string>
+    <string name="olive">Olive</string>
+    <string name="fine">Fine</string>
+    <string name="coarse">Coarse</string>
+    <string name="average">Average</string>
+    <string name="scars">Scars</string>
+    <string name="naevi">Naevi</string>
+    <string name="skin_tags">Skin tags</string>
+    <string name="wrinkles_deep_superficial">Wrinkles (deep/superficial)</string>
+    <string name="deep">Deep</string>
+    <string name="superficial">Superficial</string>
+    <string name="medium">Medium</string>
+    <string name="small">Small</string>
+    <string name="enlarged">Enlarged</string>
+    <string name="around_eyes">Around Eyes</string>
+    <string name="anywhere_in_the_face">Anywhere in the face</string>
+    <string name="backend">backend</string>
+
+</resources>
