@@ -1,0 +1,21 @@
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+
+RewriteRule ^backend/assets/(.*)$ backend/web/assets/$1 [L]
+RewriteRule ^uploads/(.*)$ uploads/$1 [L]
+RewriteRule ^api/(.*)$ frontend/web/api/$1 [L]
+RewriteRule ^backend(/.+)?$ backend/web/index.php$1 [L,PT]
+RewriteRule ^backend(/.+)?$ backend/web/index.php$1 [L,PT]
+RewriteRule ^(.+)?$ frontend/web/$1
+</IfModule>
+
+# Deny accessing below extensions
+<Files ~ "(.json|.lock|.git)">
+Order allow,deny
+Deny from all
+</Files>
+
+# Deny accessing dot files
+RewriteRule (^\.|/\.) - [F]
