@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/no"
+        android:title="no" />
+
+    <item
+        android:id="@+id/sebum"
+        android:title="excess sebum" />
+
+    <item
+        android:id="@+id/dandruff"
+        android:title="dandruff" />
+
+    <item
+        android:id="@+id/lack_of_density"
+        android:title="lack of density" />
+    <item
+        android:id="@+id/sensitiveness"
+        android:title="sensitiveness/ redness/ itchiness" />
+
+    <item
+        android:id="@+id/hair_loss"
+        android:title="hair loss" />
+
+
+</menu>

@@ -1,0 +1,1996 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#91fae4f0"
+    android:fitsSystemWindows="true"
+    tools:context=".FacialFragment">
+    <!--<include layout="@layout/event_list" />-->
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/banner"
+            android:fitsSystemWindows="true"
+            app:contentScrim="@color/colorPrimaryLight"
+            app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
+            app:toolbarId="@+id/toolbar">
+
+            <ImageView
+                android:id="@+id/feature_img"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:fitsSystemWindows="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/facial"
+                app:layout_collapseMode="parallax" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:minHeight="25dp"
+                app:layout_collapseMode="parallax"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:id="@+id/ll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="start"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:gravity="start"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/textNameLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight=".33"
+                    android:gravity="start">
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/textName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_regular"
+                        android:gravity="start"
+                        android:hint="@string/full_name"
+                        android:inputType="text"
+                        android:textSize="16sp" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/textPhoneLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight=".33"
+                    android:gravity="start">
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/textPhone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_regular"
+                        android:gravity="start"
+                        android:hint="@string/phone_number"
+                        android:inputType="phone"
+                        android:textSize="16sp" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/textEmailayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight=".33"
+                    android:gravity="start">
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/textEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_regular"
+                        android:hint="@string/e_mail_address"
+                        android:inputType="textEmailAddress"
+                        android:textSize="16sp" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:clipToPadding="false"
+                android:gravity="start"
+                android:paddingStart="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight=".50"
+                    android:baselineAligned="false"
+                    android:fontFamily="@font/cairo_regular"
+                    android:gravity="start"
+                    android:paddingStart="0dp"
+                    android:paddingTop="20dp"
+                    android:text="@string/lifestyle" />
+
+                <RadioGroup
+                    android:id="@+id/myRadioGroup"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight=".33"
+                    android:checkedButton="@+id/Active"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/Active"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:fontFamily="@font/cairo_regular"
+                        android:text="@string/active" />
+
+                    <RadioButton
+                        android:id="@+id/Sedentary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_regular"
+                        android:text="@string/sedentary" />
+
+
+                </RadioGroup>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/textAgeayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".19"
+                    android:gravity="start">
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/textAge"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_regular"
+                        android:hint="@string/age"
+                        android:inputType="number"
+                        android:textSize="14sp" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:clipToPadding="false"
+                android:gravity="start"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight=".50"
+                    android:baselineAligned="false"
+                    android:fontFamily="@font/cairo_regular"
+                    android:gravity="start"
+                    android:paddingTop="5dp"
+                    android:text="@string/exercise" />
+
+                <RadioGroup
+                    android:id="@+id/radioExercise"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".50"
+                    android:checkedButton="@+id/soft"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/exerciseYes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:fontFamily="@font/cairo_regular"
+                        android:text="@string/yes" />
+
+                    <RadioButton
+                        android:id="@+id/exerciseNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_regular"
+                        android:text="@string/no" />
+
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:clipToPadding="false"
+                android:gravity="start"
+                android:paddingStart="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight=".50"
+                    android:baselineAligned="false"
+                    android:fontFamily="@font/cairo_regular"
+                    android:gravity="start"
+                    android:paddingTop="5dp"
+                    android:text="@string/pregnancies" />
+
+
+                <RadioGroup
+                    android:id="@+id/radioPregnancies"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".50"
+                    android:checkedButton="@+id/pregnanciesNo"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/pregnanciesYes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:fontFamily="@font/cairo_regular"
+                        android:text="@string/yes" />
+
+                    <RadioButton
+                        android:id="@+id/pregnanciesNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_regular"
+                        android:text="@string/no" />
+
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:clipToPadding="false"
+                android:gravity="start"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:paddingStart="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/cairo_regular"
+                    android:text="@string/skin_analysis" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#ccc" />
+            </LinearLayout>
+
+            <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:clipToPadding="false"-->
+            <!--android:gravity="start"-->
+            <!--android:paddingStart="10dp">-->
+
+            <!--<TextView-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_marginStart="10dp"-->
+            <!--android:layout_weight=".50"-->
+            <!--android:baselineAligned="false"-->
+            <!--android:fontFamily="@font/cairo_regular"-->
+            <!--android:gravity="start"-->
+            <!--android:paddingTop="5dp"-->
+            <!--android:text="@string/type" />-->
+
+
+            <!--<RadioGroup-->
+            <!--android:id="@+id/radioSkinType"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight=".50"-->
+            <!--android:checkedButton="@+id/skinCombination"-->
+            <!--android:orientation="horizontal">-->
+
+            <!--<RadioButton-->
+            <!--android:id="@+id/skinCombination"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:checked="true"-->
+            <!--android:fontFamily="@font/cairo_regular"-->
+            <!--android:text="@string/Combination" />-->
+
+            <!--<RadioButton-->
+            <!--android:id="@+id/skinOily"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:fontFamily="@font/cairo_regular"-->
+            <!--android:text="@string/oily" />-->
+
+            <!--<RadioButton-->
+            <!--android:id="@+id/skinDry"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:fontFamily="@font/cairo_regular"-->
+            <!--android:text="@string/dry" />-->
+
+            <!--</RadioGroup>-->
+
+            <!--</LinearLayout>-->
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:clipToPadding="false"
+                android:gravity="start"
+                android:paddingStart="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight=".50"
+                    android:baselineAligned="false"
+                    android:fontFamily="@font/cairo_regular"
+                    android:gravity="start"
+                    android:paddingTop="5dp"
+                    android:text="@string/Colour" />
+
+
+                <RadioGroup
+                    android:id="@+id/radioSkinColour"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".50"
+                    android:checkedButton="@+id/skinFair"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/skinFair"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:fontFamily="@font/cairo_regular"
+                        android:text="@string/fair" />
+
+                    <RadioButton
+                        android:id="@+id/skinDark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_regular"
+                        android:text="@string/dark" />
+
+                    <RadioButton
+                        android:id="@+id/skinOlive"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_regular"
+                        android:text="@string/olive" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:clipToPadding="false"
+                android:gravity="start"
+                android:paddingStart="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight=".50"
+                    android:baselineAligned="false"
+                    android:fontFamily="@font/cairo_regular"
+                    android:gravity="start"
+                    android:paddingTop="5dp"
+                    android:text="@string/texture" />
+
+
+                <!--<RadioGroup-->
+                <!--android:id="@+id/radioSkinTexture"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight=".50"-->
+                <!--android:checkedButton="@+id/skinFair"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<RadioButton-->
+                <!--android:id="@+id/skinFine"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:checked="true"-->
+                <!--android:fontFamily="@font/cairo_regular"-->
+                <!--android:text="@string/fine" />-->
+
+                <!--<RadioButton-->
+                <!--android:id="@+id/skinCoarse"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:fontFamily="@font/cairo_regular"-->
+                <!--android:text="@string/coarse" />-->
+
+
+                <!--</RadioGroup>-->
+
+                <!--</LinearLayout>-->
+
+                <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:clipToPadding="false"-->
+                <!--android:gravity="start"-->
+                <!--android:paddingStart="10dp">-->
+
+                <!--<TextView-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_marginStart="10dp"-->
+                <!--android:layout_weight=".50"-->
+                <!--android:baselineAligned="false"-->
+                <!--android:fontFamily="@font/cairo_regular"-->
+                <!--android:gravity="start"-->
+                <!--android:paddingTop="5dp"-->
+                <!--android:text="@string/circulation" />-->
+
+
+                <!--<RadioGroup-->
+                <!--android:id="@+id/radioSkinCirculation"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight=".50"-->
+                <!--android:checkedButton="@+id/skinCirculation"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<RadioButton-->
+                <!--android:id="@+id/skinCirculationGood"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:checked="true"-->
+                <!--android:fontFamily="@font/cairo_regular"-->
+                <!--android:text="@string/good" />-->
+
+                <!--<RadioButton-->
+                <!--android:id="@+id/skinCirculationAverage"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:fontFamily="@font/cairo_regular"-->
+                <!--android:text="@string/average" />-->
+
+                <!--<RadioButton-->
+                <!--android:id="@+id/skinCirculationPoor"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:fontFamily="@font/cairo_regular"-->
+                <!--android:text="@string/poor" />-->
+
+                <!--</RadioGroup>-->
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:clipToPadding="false"
+                android:gravity="start"
+                android:paddingStart="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight=".50"
+                    android:baselineAligned="false"
+                    android:fontFamily="@font/cairo_regular"
+                    android:gravity="start"
+                    android:paddingTop="5dp"
+                    android:text="@string/muscle_tone" />
+
+
+                <RadioGroup
+                    android:id="@+id/radioSkinMuscletone"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".50"
+                    android:checkedButton="@+id/skinMuscleToneGood"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/skinMuscleToneGood"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:fontFamily="@font/cairo_regular"
+                        android:text="@string/good" />
+
+                    <RadioButton
+                        android:id="@+id/skinMuscleToneAverage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_regular"
+                        android:text="@string/average" />
+
+                    <RadioButton
+                        android:id="@+id/skinMuscleTonePoor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_regular"
+                        android:text="@string/poor" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:clipToPadding="false"
+                android:gravity="start"
+                android:paddingStart="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight=".50"
+                    android:baselineAligned="false"
+                    android:fontFamily="@font/cairo_regular"
+                    android:gravity="start"
+                    android:paddingTop="5dp"
+                    android:text="@string/elasticity" />
+
+
+                <RadioGroup
+                    android:id="@+id/radioSkinElasticity"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".50"
+                    android:checkedButton="@+id/skinElasticityeGood"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/skinElasticityGood"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:fontFamily="@font/cairo_regular"
+                        android:text="@string/good" />
+
+                    <RadioButton
+                        android:id="@+id/skinElasticityAverage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_regular"
+                        android:text="@string/average" />
+
+                    <RadioButton
+                        android:id="@+id/skinElasticityPoor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_regular"
+                        android:text="@string/poor" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:clipToPadding="false"
+                android:gravity="start"
+                android:paddingStart="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight=".50"
+                    android:baselineAligned="false"
+                    android:fontFamily="@font/cairo_regular"
+                    android:gravity="start"
+                    android:paddingTop="5dp"
+                    android:text="@string/imperfections_irregularities" />
+
+
+                <RadioGroup
+                    android:id="@+id/radioSkinImperfections"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".50"
+                    android:checkedButton="@+id/skinScars"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/skinScars"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:fontFamily="@font/cairo_regular"
+                        android:text="@string/scars" />
+
+                    <RadioButton
+                        android:id="@+id/skinNaevi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_regular"
+                        android:text="@string/naevi" />
+
+                    <RadioButton
+                        android:id="@+id/skinSkintags"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_regular"
+                        android:text="@string/skin_tags" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:clipToPadding="false"
+                android:gravity="start"
+                android:paddingStart="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight=".50"
+                    android:baselineAligned="false"
+                    android:fontFamily="@font/cairo_regular"
+                    android:gravity="start"
+                    android:paddingTop="5dp"
+                    android:text="@string/wrinkles_deep_superficial" />
+
+
+                <RadioGroup
+                    android:id="@+id/radioSkinWrinkles"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".50"
+                    android:checkedButton="@+id/skinDeep"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/skinWrinklesDeep"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:fontFamily="@font/cairo_regular"
+                        android:text="@string/deep" />
+
+                    <RadioButton
+                        android:id="@+id/skinSuperficial"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_regular"
+                        android:text="@string/superficial" />
+
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:clipToPadding="false"
+                android:gravity="start"
+                android:paddingStart="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight=".50"
+                    android:baselineAligned="false"
+                    android:fontFamily="@font/cairo_regular"
+                    android:gravity="start"
+                    android:paddingTop="5dp"
+                    android:text="@string/pores" />
+
+
+                <RadioGroup
+                    android:id="@+id/radioSkinPores"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".50"
+                    android:checkedButton="@+id/skinPoresMedium"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/skinPoresMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:fontFamily="@font/cairo_regular"
+                        android:text="@string/medium" />
+
+                    <RadioButton
+                        android:id="@+id/skinPoresSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_regular"
+                        android:text="@string/small" />
+
+                    <RadioButton
+                        android:id="@+id/skinPoresEnlarged"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_regular"
+                        android:text="@string/enlarged" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:clipToPadding="false"
+                android:gravity="start"
+                android:paddingStart="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight=".50"
+                    android:baselineAligned="false"
+                    android:fontFamily="@font/cairo_regular"
+                    android:gravity="start"
+                    android:paddingTop="5dp"
+                    android:text="@string/discoloration" />
+
+
+                <RadioGroup
+                    android:id="@+id/radioSkinDiscoloration"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".50"
+                    android:checkedButton="@+id/skinPoresAround"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/skinPoresAround"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:fontFamily="@font/cairo_regular"
+                        android:text="@string/around_eyes" />
+
+                    <RadioButton
+                        android:id="@+id/skinPoresAny"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_regular"
+                        android:text="@string/anywhere_in_the_face" />
+
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:clipToPadding="false"
+                    android:gravity="start"
+                    android:orientation="horizontal"
+                    android:paddingStart="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:baselineAligned="false"
+                        android:fontFamily="@font/cairo_regular"
+                        android:gravity="start"
+                        android:minWidth="270dp"
+                        android:paddingTop="5dp"
+                        android:text="@string/circulation" />
+
+
+                    <RadioGroup
+                        android:id="@+id/radioSkinCirculation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20sp"
+                        android:checkedButton="@+id/skinPoresAround"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/skinErythema"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="erythema" />
+
+                        <RadioButton
+                            android:id="@+id/skinErythrose"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="erythrose" />
+
+                        <RadioButton
+                            android:id="@+id/telangiectasia"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="telangiectasia" />
+
+
+                        <RadioButton
+                            android:id="@+id/rosacea"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="rosacea" />
+
+
+                    </RadioGroup>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:clipToPadding="false"
+                android:gravity="start"
+                android:orientation="horizontal"
+                android:paddingStart="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:baselineAligned="false"
+                    android:fontFamily="@font/cairo_regular"
+                    android:gravity="start"
+                    android:minWidth="270dp"
+                    android:paddingTop="5dp"
+                    android:text="Hydration" />
+
+
+                <RadioGroup
+                    android:id="@+id/radioSkinHydration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20sp"
+                    android:checkedButton="@+id/skinPoresAround"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/superficial_dehydration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:fontFamily="@font/cairo_regular"
+                        android:text="superficial dehydration" />
+
+                    <RadioButton
+                        android:id="@+id/deep_dehydration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_regular"
+                        android:text="deep dehydration" />
+
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:clipToPadding="false"
+                    android:gravity="start"
+                    android:orientation="horizontal"
+                    android:paddingStart="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:baselineAligned="false"
+                        android:fontFamily="@font/cairo_regular"
+                        android:gravity="start"
+                        android:minWidth="270dp"
+                        android:paddingTop="5dp"
+                        android:text="Teint" />
+
+
+                    <RadioGroup
+                        android:id="@+id/radioSkinTeint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20sp"
+                        android:checkedButton="@+id/skinPoresAround"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/scramble"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="scramble" />
+
+                        <RadioButton
+                            android:id="@+id/bilious"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="bilious" />
+
+                        <RadioButton
+                            android:id="@+id/pink"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="pink" />
+
+                        <RadioButton
+                            android:id="@+id/dull"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="dull" />
+
+                        <RadioButton
+                            android:id="@+id/pale"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="pale" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:clipToPadding="false"
+                android:gravity="start"
+                android:orientation="horizontal"
+                android:paddingStart="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:baselineAligned="false"
+                    android:fontFamily="@font/cairo_regular"
+                    android:gravity="start"
+                    android:minWidth="270dp"
+                    android:paddingTop="5dp"
+                    android:text="Texture" />
+
+
+                <RadioGroup
+                    android:id="@+id/radioSkinTexture"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20sp"
+                    android:checkedButton="@+id/skinPoresAround"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/Normal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:fontFamily="@font/cairo_regular"
+                        android:text="Normal" />
+
+                    <RadioButton
+                        android:id="@+id/fine"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_regular"
+                        android:text="fine" />
+
+                    <RadioButton
+                        android:id="@+id/thick"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_regular"
+                        android:text="thick" />
+
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:clipToPadding="false"
+                    android:gravity="start"
+                    android:orientation="horizontal"
+                    android:paddingStart="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:baselineAligned="false"
+                        android:fontFamily="@font/cairo_regular"
+                        android:gravity="start"
+                        android:minWidth="270dp"
+                        android:paddingTop="5dp"
+                        android:text="Type" />
+
+
+                    <RadioGroup
+                        android:id="@+id/radioSkinType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20sp"
+                        android:checkedButton="@+id/skinPoresAround"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/dry"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="dry" />
+
+                        <RadioButton
+                            android:id="@+id/oily"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="oily" />
+
+                        <RadioButton
+                            android:id="@+id/combination"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="combination" />
+
+                        <RadioButton
+                            android:id="@+id/mature"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="mature" />
+
+                        <RadioButton
+                            android:id="@+id/sensitive"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="sensitive" />
+
+                        <RadioButton
+                            android:id="@+id/normal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="normal" />
+
+                        <RadioButton
+                            android:id="@+id/acne"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="acne" />
+                    </RadioGroup>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:clipToPadding="false"
+                    android:gravity="start"
+                    android:orientation="horizontal"
+                    android:paddingStart="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:baselineAligned="false"
+                        android:fontFamily="@font/cairo_regular"
+                        android:gravity="start"
+                        android:minWidth="270dp"
+                        android:paddingTop="5dp"
+                        android:text="Secretions" />
+
+
+                    <RadioGroup
+                        android:id="@+id/radioSkinSecretions"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20sp"
+                        android:checkedButton="@+id/skinPoresAround"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/adipic"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="adipic" />
+
+                        <RadioButton
+                            android:id="@+id/asphyxia"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="asphyxia" />
+
+                        <RadioButton
+                            android:id="@+id/comedone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="comedone" />
+
+                        <RadioButton
+                            android:id="@+id/seborrheic"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="seborrheic" />
+
+                        <RadioButton
+                            android:id="@+id/Secretions_acne"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="acne" />
+
+                        <RadioButton
+                            android:id="@+id/mixed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="mixed" />
+
+                        <RadioButton
+                            android:id="@+id/Secretions_normal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="normal" />
+                    </RadioGroup>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:clipToPadding="false"
+                    android:gravity="start"
+                    android:orientation="horizontal"
+                    android:paddingStart="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:baselineAligned="false"
+                        android:fontFamily="@font/cairo_regular"
+                        android:gravity="start"
+                        android:minWidth="270dp"
+                        android:paddingTop="5dp"
+                        android:text="Circulation anomaly" />
+
+
+                    <RadioGroup
+                        android:id="@+id/radioSkin_Circulation_anomaly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20sp"
+                        android:checkedButton="@+id/skinPoresAround"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/angioma"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="angioma" />
+
+                        <RadioButton
+                            android:id="@+id/ruby"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="ruby " />
+
+
+                        <RadioButton
+                            android:id="@+id/stellate_angiomas"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="stellate angiomas" />
+
+                    </RadioGroup>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:clipToPadding="false"
+                    android:gravity="start"
+                    android:orientation="horizontal"
+                    android:paddingStart="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:baselineAligned="false"
+                        android:fontFamily="@font/cairo_regular"
+                        android:gravity="start"
+                        android:minWidth="270dp"
+                        android:paddingTop="5dp"
+                        android:text="Pigmentation anomaly" />
+
+
+                    <RadioGroup
+                        android:id="@+id/radioSkin_Pigmentation_anomaly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20sp"
+                        android:checkedButton="@+id/skinPoresAround"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/ephelides"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="Ephelides" />
+
+                        <RadioButton
+                            android:id="@+id/chloasma"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="chloasma" />
+
+                        <RadioButton
+                            android:id="@+id/senile_spots"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="senile spots" />
+
+                        <RadioButton
+                            android:id="@+id/albinism"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="albinism" />
+
+                        <RadioButton
+                            android:id="@+id/vitiligo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="vitiligo" />
+                    </RadioGroup>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:clipToPadding="false"
+                    android:gravity="start"
+                    android:orientation="horizontal"
+                    android:paddingStart="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:baselineAligned="false"
+                        android:fontFamily="@font/cairo_regular"
+                        android:gravity="start"
+                        android:minWidth="270dp"
+                        android:paddingTop="5dp"
+                        android:text="More anomalies" />
+
+
+                    <RadioGroup
+                        android:id="@+id/radioSkin_More_anomalies"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20sp"
+                        android:checkedButton="@+id/skinPoresAround"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/aqueous_pockets"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="aqueous pockets" />
+
+                        <RadioButton
+                            android:id="@+id/fat_pockets"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="fat pockets" />
+
+                        <RadioButton
+                            android:id="@+id/milia_grains"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="milia grains" />
+
+                        <RadioButton
+                            android:id="@+id/double_chin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="double chin" />
+
+                        <RadioButton
+                            android:id="@+id/keratosis"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="keratosis" />
+
+                        <RadioButton
+                            android:id="@+id/cysts"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="cysts" />
+
+                        <RadioButton
+                            android:id="@+id/scars"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="scars" />
+
+                        <RadioButton
+                            android:id="@+id/naevus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="naevus" />
+
+                        <RadioButton
+                            android:id="@+id/warts"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="warts" />
+                    </RadioGroup>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:clipToPadding="false"
+                android:gravity="start"
+                android:orientation="horizontal"
+                android:paddingStart="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:baselineAligned="false"
+                    android:fontFamily="@font/cairo_regular"
+                    android:gravity="start"
+                    android:minWidth="270dp"
+                    android:paddingTop="5dp"
+                    android:text="Dermatosis" />
+
+
+                <RadioGroup
+                    android:id="@+id/radioSkinDermatosis"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20sp"
+                    android:checkedButton="@+id/skinPoresAround"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/eczema"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:fontFamily="@font/cairo_regular"
+                        android:text="eczema" />
+
+                    <RadioButton
+                        android:id="@+id/psoriasis"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_regular"
+                        android:text="psoriasis" />
+
+                    <RadioButton
+                        android:id="@+id/herpes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_regular"
+                        android:text="herpes" />
+
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:clipToPadding="false"
+                android:gravity="start"
+                android:orientation="horizontal"
+                android:paddingStart="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:baselineAligned="false"
+                    android:fontFamily="@font/cairo_regular"
+                    android:gravity="start"
+                    android:minWidth="270dp"
+                    android:paddingTop="5dp"
+                    android:text="Tonicity" />
+
+
+                <RadioGroup
+                    android:id="@+id/radioSkinTonicity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20sp"
+                    android:checkedButton="@+id/skinPoresAround"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/firm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:fontFamily="@font/cairo_regular"
+                        android:text="firm" />
+
+                    <RadioButton
+                        android:id="@+id/light"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_regular"
+                        android:text="light" />
+
+                    <RadioButton
+                        android:id="@+id/loose"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_regular"
+                        android:text="loose" />
+
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:clipToPadding="false"
+                    android:gravity="start"
+                    android:orientation="horizontal"
+                    android:paddingStart="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:baselineAligned="false"
+                        android:fontFamily="@font/cairo_regular"
+                        android:gravity="start"
+                        android:minWidth="270dp"
+                        android:paddingTop="5dp"
+                        android:text="Soins recommended" />
+
+
+                    <RadioGroup
+                        android:id="@+id/radioSkin_Soins_recommended"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20sp"
+                        android:checkedButton="@+id/skinPoresAround"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/soothe"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="soothe" />
+
+                        <RadioButton
+                            android:id="@+id/nourish"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="nourish" />
+
+                        <RadioButton
+                            android:id="@+id/clarify"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="clarify" />
+
+                        <RadioButton
+                            android:id="@+id/normalize"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="normalize" />
+
+                        <RadioButton
+                            android:id="@+id/moisturize"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="moisturize" />
+
+                        <RadioButton
+                            android:id="@+id/anti_age"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="anti-age" />
+
+                        <RadioButton
+                            android:id="@+id/energize"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="energize" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/textRoutineLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight=".9"
+                    android:gravity="start">
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/text_routine"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_regular"
+                        android:gravity="start"
+                        android:hint="Present skincare routine: "
+                        android:inputType="textMultiLine"
+                        android:lines="5"
+                        android:textSize="16sp" />
+                </android.support.design.widget.TextInputLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/textPresentLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight=".50"
+                    android:gravity="start">
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/textPresent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_regular"
+                        android:gravity="start"
+                        android:hint="@string/present_skincare_routine"
+                        android:inputType="text"
+                        android:textSize="16sp" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/textHandsLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight=".50"
+                    android:gravity="start">
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/textHands"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_regular"
+                        android:gravity="start"
+                        android:hint="@string/hands"
+                        android:inputType="text"
+                        android:textSize="16sp" />
+                </android.support.design.widget.TextInputLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/textFeetLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight=".50"
+                    android:gravity="start">
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/textFeet"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_regular"
+                        android:gravity="start"
+                        android:hint="@string/feet"
+                        android:inputType="text"
+                        android:textSize="16sp" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/textMiscellaneousLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight=".50"
+                    android:gravity="start">
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/textMiscellaneous"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_regular"
+                        android:gravity="start"
+                        android:hint="@string/miscellaneous"
+                        android:inputType="text"
+                        android:textSize="16sp" />
+                </android.support.design.widget.TextInputLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/textRetailLFacial"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight=".9"
+                    android:gravity="start">
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/textRetailPFacial"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_regular"
+                        android:gravity="start"
+                        android:hint="@string/retail"
+                        android:inputType="textMultiLine"
+                        android:lines="5"
+                        android:textSize="16sp" />
+                </android.support.design.widget.TextInputLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/textRCommentsF"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight=".9"
+                    android:gravity="start">
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/textRCommentsFacial"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_regular"
+                        android:gravity="start"
+                        android:hint="@string/comments"
+                        android:inputType="textMultiLine"
+                        android:lines="5"
+                        android:textSize="16sp" />
+                </android.support.design.widget.TextInputLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/textnotesLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight=".9"
+                    android:gravity="start">
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/textNotes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_regular"
+                        android:gravity="top"
+                        android:hint="@string/notes"
+                        android:inputType="textMultiLine"
+                        android:lines="5"
+                        android:textSize="16sp" />
+                </android.support.design.widget.TextInputLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:gravity="start"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_regular"
+                        android:text="@string/therapist_s_signature" />
+
+                    <com.github.gcacace.signaturepad.views.SignaturePad
+                        android:id="@+id/techSignature_pad"
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:background="@color/colorPrimaryLight" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:clipToPadding="false"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/facial_his"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/cairo_regular"
+                    android:text="History" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:clipToPadding="false"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/facialBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/cairo_regular"
+                    android:text="@string/submit" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+
+</android.support.design.widget.CoordinatorLayout>

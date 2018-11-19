@@ -1,0 +1,43 @@
+{
+    "logs": [
+        {
+            "outputFile": "E:\\Courses JAVA C# WEB\\project review\\3bas\\Webtoolx-Hotstone2\\aFileChooser\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-es\\values-es.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\MAGIC\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\98deb4fb01e0438e3c8ac353ff3a61a8\\res\\values-es\\values-es.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "5",
+                        "startColumns": "4",
+                        "startOffsets": "259",
+                        "endColumns": "100",
+                        "endOffsets": "355"
+                    }
+                },
+                {
+                    "source": "E:\\Courses JAVA C# WEB\\project review\\3bas\\Webtoolx-Hotstone2\\aFileChooser\\build\\intermediates\\packaged_res\\debug\\values-es\\values-es.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,117,178,259",
+                        "endColumns": "61,60,80,90",
+                        "endOffsets": "112,173,254,345"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,6",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,117,178,360",
+                        "endColumns": "61,60,80,90",
+                        "endOffsets": "112,173,254,446"
+                    }
+                }
+            ]
+        }
+    ]
+}

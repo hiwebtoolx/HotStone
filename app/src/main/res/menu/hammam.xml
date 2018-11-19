@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/Chocolate"
+        android:title="Chocolate Body Scrub" />
+
+    <item
+        android:id="@+id/coffee"
+        android:title="Coffee Body Scrub" />
+
+    <item
+        android:id="@+id/gold"
+        android:title="Gold Body Scrub" />
+
+    <item
+        android:id="@+id/lulur"
+        android:title="Lulur Body Scrub" />
+    <item
+        android:id="@+id/pearl"
+        android:title="Pearl Body Scrub" />
+
+    <item
+        android:id="@+id/salt"
+        android:title="Sea salt Body Scrub" />
+
+    <item
+        android:id="@+id/bridal"
+        android:title="Bridal Moroccan Hammam with Zafa Ceremon" />
+
+    <item
+        android:id="@+id/Enzyme"
+        android:title="Enzyme Session" />
+
+    <item
+        android:id="@+id/golden"
+        android:title="Golden Moroccan Hammam" />
+    <item
+        android:id="@+id/day"
+        android:title="Mother’s Day Moroccan w/ java Concept" />
+
+    <item
+        android:id="@+id/pearl2"
+        android:title="Pearl Moroccan Hammam" />
+
+
+    <item
+        android:id="@+id/royal"
+        android:title="Royal Moroccan Hammam" />
+
+    <item
+        android:id="@+id/royal2"
+        android:title="Royal Moroccan Hammam with Enzyme" />
+    <item
+        android:id="@+id/traditional"
+        android:title="Traditional Moroccan Hammam with Enzym" />
+
+
+</menu>

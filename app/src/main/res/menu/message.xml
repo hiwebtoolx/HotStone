@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/Chocolate"
+        android:title="Argan Relaxing Massage" />
+
+    <item
+        android:id="@+id/coffee"
+        android:title="Aromatherapy Massage" />
+
+    <item
+        android:id="@+id/gold"
+        android:title="Ayurveda Massage" />
+
+    <item
+        android:id="@+id/lulur"
+        android:title="Balinese Massage" />
+    <item
+        android:id="@+id/pearl"
+        android:title="Gold Honey Massage" />
+
+    <item
+        android:id="@+id/salt"
+        android:title="Head,Neck and Shoulder Massage 60 SR400.00" />
+
+    <item
+        android:id="@+id/bridal"
+        android:title="Herbal Massage" />
+
+    <item
+        android:id="@+id/Enzyme"
+        android:title="Hot Stone Massage" />
+
+    <item
+        android:id="@+id/day"
+        android:title="Mother's day Hotstone Massage" />
+
+    <item
+        android:id="@+id/pearl2"
+        android:title="Mother's day Javanese Massage" />
+
+
+    <item
+        android:id="@+id/royal"
+        android:title="Pearl Honey Massage" />
+
+    <item
+        android:id="@+id/royal2"
+        android:title="Pregnancy Massage" />
+    <item
+        android:id="@+id/traditional"
+        android:title="Reflexology Massage" />
+
+    <item
+        android:id="@+id/golden"
+        android:title="Swedish Massage" />
+
+</menu>

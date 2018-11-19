@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/volume"
+        android:title="Extra volume" />
+
+    <item
+        android:id="@+id/smooth"
+        android:title="smooth blow-dry" />
+
+    <item
+        android:id="@+id/curls"
+        android:title="better-defined curls" />
+
+    <item
+        android:id="@+id/preference"
+        android:title=" No specific preference" />
+
+</menu>

@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HotStone</string>
+    <string name="hello">مرحبا</string>
+    <string name="acrylic_line1">أتفهم أن تركيب الأظافر أكريليك (Acrylic) أو جيل (Gel) يبدو جميل المظهر و جدا مناسب للمناسبات
+الخاصة و تحسين مظهر اليد</string>
+    <string name="acrylic_line2">أتفهم أن تركيب أظافر أكريليك (acrylic) أو الجيل (Gel) قد يؤدي لتكسر الأظافر الأصلية، يكون
+التهابات خطيرة للظفر، و يؤدي لفقدان الظفر الطبيعي.
+ممكن أن تسبب الأظافر الاصطناعية الحساسية و التهابات و ألم في الظفر.
+و قد يحتاج الظفر المتضرر الى سنة كاملة من العلاج.</string>
+    <string name="age">السن</string>
+    <string name="lifestyle">نمط الحياة</string>
+    <string name="active">نشطة</string>
+    <string name="sedentary">مستقرة</string>
+    <string name="pregnancies">الحمل</string>
+    <string name="yes">نعم</string>
+    <string name="update_client">تعديل بيانات العميل</string>
+    <string name="update">تعديل</string>
+
+    <string name="no">لا</string>
+    <string name="ar">عربي</string>
+    <string name="en">English</string>
+    <string name="change_lang">اعد تشغيل التطبيق لاظهار اللغة</string>
+    <string name="treatment_suggested">العلاج</string>
+    <string name="retail">المنتج المقترح</string>
+    <string name="comments">ملاحظات</string>
+    <string name="submit">ارسل</string>
+    <string name="full_name">الاسم بالكامل</string>
+    <string name="phone_number">رقم الهاتف</string>
+    <string name="e_mail_address">البريد الالكتروني</string>
+    <string name="technician_name">اسم الفني</string>
+    <string name="how_do_you_prefer_your_massage_pressure">كيف تريدن الضغط في المساج</string>
+    <string name="massage_do_you_prefer">ماهو نوع المساج الذي تردينه:</string>
+    <string name="are_you_pregnant">هل انت حامل ؟</string>
+    <string name="soft">ناعم</string>
+    <string name="moderate">متوسط</string>
+    <string name="firm">قوي</string>
+    <string name="home">الصفحة الرئيسية</string>
+    <string name="must_select_client">يجب ان تختار عميل اولا</string>
+    <string name="customer_s_health">الحالة الصحية</string>
+    <string name="hammam_and_body_scrub">حمام مغربي وصقل للجسم</string>
+    <string name="facial_treatment">علاج الوجه</string>
+    <string name="acrylic_and_gel">اكريليك و جيل</string>
+    <string name="keratin_consultation">كيرياتين</string>
+    <string name="massage_consultation">مساج</string>
+    <string name="manicure_pedicure">مانكير و باديكير</string>
+    <string name="visits">الزيارات</string>
+    <string name="invalid_user">Invalid Username Or Password</string>
+    <string name="Muscle_tone">Muscle tone</string>
+    <string name="title_activity_webview">Webview</string>
+    <string name="search">بحث</string>
+    <string name="logout">تسجيل الخروج</string>
+    <string name="medical_history">التاريخ المرضي</string>
+    <string name="heart_disease">امراض القلب</string>
+    <string name="chest_pain">ألم الصدر</string>
+    <string name="high_blood_pressure">ارتفاع ضغط الدم</string>
+    <string name="varicose_veins">توسع الأوردة</string>
+    <string name="allergies">الحساسية</string>
+    <string name="bronchitis">التهاب شعبي</string>
+    <string name="asthma">الربو</string>
+    <string name="dizziness">دوخة</string>
+    <string name="chemotherapy">العلاج الكيميائي</string>
+    <string name="diabetes">السكري</string>
+    <string name="e_pilepsy">صرع</string>
+    <string name="other_diseases">امراض اخري</string>
+    <string name="other_diseases_desc">ما هي الامراض الاخري</string>
+    <string name="allergic">الحساسية</string>
+    <string name="what_causes_you_allergies">ما الذي يسبب لك الحساسية</string>
+    <string name="therapist_s_signature">توقيع المعالج</string>
+    <string name="exercise">ممارسه الرياضه</string>
+    <string name="how_do_you_prefer_the_scrubbing">كيف تفضل الفرك؟</string>
+    <string name="are_you_recently_delivered">هل أنت حديثة الولادة؟</string>
+    <string name="did_you_have_a_surgery_operation_during_the_last_3_months"> هل قمت بعملية جراحية خلال اخر ٣ اشهر</string>
+    <string name="did_you_do_a_peeling">هل قمت بتقشير كيميائي للجسم او للوجه ؟</string>
+    <string name="when">متي</string>
+    <string name="when_was_your_last_laser_session_t_you_did">متى كانت آخر جلسة ليزر لديك؟</string>
+    <string name="which_hammam_or_body_scrub_do_you_prefer">ماهو نوع الحمام الذي تختارينه </string>
+    <string name="client_signature">توقيع الزبونة</string>
+    <string name="when_last_time_you_remove_the_hair_by_waxing_or_halawa_or_shaving">متي كانت آخر مرة تم إزالة الشعر بالشمع أو الحلاوة أو شفرة حلاقة؟</string>
+    <string name="search_dialog">بحث ...</string>
+    <string name="search_dialog1">بحث...</string>
+    <string name="enter_phone">ادخل رقم الهاتف ..</string>
+    <string name="cust_search">بحث....</string>
+    <string name="skin_analysis">تحليل الجلد</string>
+    <string name="type">النوع</string>
+    <string name="color">اللون</string>
+    <string name="texture">الملمس</string>
+    <string name="circulation">الدورة</string>
+    <string name="muscle_tone">قوة العضلات</string>
+    <string name="elasticity">المرونة</string>
+    <string name="imperfections_irregularities">عيوب</string>
+    <string name="wrinkles">التجاعيد</string>
+    <string name="pores">المسام</string>
+    <string name="discoloration">تغيير اللون</string>
+    <string name="present_skincare_routine">العناية بالبشرة الروتينية</string>
+    <string name="hands">اليد</string>
+    <string name="feet">القدم</string>
+    <string name="miscellaneous">متنوع</string>
+    <string name="notes">ملاحظات</string>
+    <string name="did_you_color_your_hair">هل قمت بصبغ شعرك ؟</string>
+    <string name="did_you_make_highlight">هل قمت بوضع هاي لايت ؟</string>
+    <string name="did_you_put_henna">هل قمنت بوضع حنة؟</string>
+    <string name="did_you_make_hair_straightening">هل قمت بفرد الشعر سابقا؟</string>
+    <string name="did_you_make_removing_color">هل قمت بسحب اللون؟</string>
+    <string name="did_you_make_keratin_before">هل قمت بوضع كيراتين؟</string>
+    <string name="hair_specialist_name">اسم الإخصائية</string>
+    <string name="product_name">اسم  المنتج</string>
+    <string name="cuts">جروح</string>
+    <string name="eczema">الأكزيما</string>
+    <string name="psoriasis">الصدفية</string>
+    <string name="veins_problems">مشاكل الأوردة</string>
+    <string name="arthritis">التهاب المفاصل</string>
+    <string name="medical_oedema">احتباس السوائل</string>
+    <string name="others">اخري</string>
+    <string name="nail_and_skin_conditions">حالة الجلد و الاظافر</string>
+    <string name="cuticle_condition">حالة الجلد حول الاظافر</string>
+    <string name="excellent">ممتاز</string>
+    <string name="fair">وسط</string>
+    <string name="poor">ضعيف</string>
+    <string name="blood_circulation">الدورة الدموية</string>
+    <string name="normal">عاديه</string>
+    <string name="good">جيده</string>
+    <string name="username">اسم المستخدم</string>
+    <string name="password">كلمة المرور</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="about">عنا</string>
+    <string name="welcome_to_hot_stone">اهلا بك في هوت ستون</string>
+    <string name="clear">مسح</string>
+    <string name="recent_fractures_minimum_3_months">كسر حديث حد ادني ٣ شهور</string>
+    <string name="take_a_moment_to_evaluate_this_service">يسعدنا تقييمك لهذه الخدمة</string>
+    <string name="new_client">اضافة عميل جديد</string>
+    <string name="add_new">اضافة عميل جديد</string>
+    <string name="not_found_user">المستخدم ليس موجود! يرجى إضافة المستخدم أولا</string>
+    <string name="added">تم الاضافة بنجاح</string>
+    <string name="thank_you">شكرا لكي!! :)</string>
+    <string name="Combination">خليط</string>
+    <string name="Colour">اللون</string>
+    <string name="oily">زيتي</string>
+    <string name="dry">جاف</string>
+    <string name="dark">داكن</string>
+    <string name="olive">زيتوني</string>
+    <string name="fine">ناعم</string>
+    <string name="coarse">خشن</string>
+    <string name="average">متوسط</string>
+    <string name="scars">ندوب</string>
+    <string name="naevi">الوحمات</string>
+    <string name="skin_tags">علامات الجلد</string>
+    <string name="wrinkles_deep_superficial">التجاعيد (عميق / سطحي)</string>
+    <string name="deep">عميق</string>
+    <string name="superficial">سطحي</string>
+    <string name="medium">وسط</string>
+    <string name="small">صغير</string>
+    <string name="enlarged">واسع</string>
+    <string name="around_eyes">حول العين</string>
+    <string name="anywhere_in_the_face">في أي مكان في الوجه</string>
+    <string name="backend">لوحة التحكم</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <string name="title_activity_login2">Sign in</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string-array name="list_preference_entries">
+        <item>Entry 1</item>
+        <item>Entry 2</item>
+        <item>Entry 3</item>
+    </string-array>
+
+    <string-array name="list_preference_entry_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="multi_select_list_preference_default_value" />
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_notifications">Notifications</string>
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
+
+
+</resources>

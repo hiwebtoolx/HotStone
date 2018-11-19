@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/easy_to_detangle"
+        android:title="easy to detangle" />
+
+    <item
+        android:id="@+id/slightly_unruly"
+        android:title="slightly unruly" />
+
+    <item
+        android:id="@+id/frizz_prone"
+        android:title="frizz-prone" />
+
+    <item
+        android:id="@+id/curly"
+        android:title="curly and unmanageable" />
+
+</menu>

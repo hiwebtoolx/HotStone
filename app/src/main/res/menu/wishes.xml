@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/soft_touch"
+        android:title=" a soft touch" />
+
+    <item
+        android:id="@+id/shine"
+        android:title=" more shine" />
+
+    <item
+        android:id="@+id/resistance"
+        android:title=" more resistance to breakage" />
+
+    <item
+        android:id="@+id/touch"
+        android:title="a natural touch and glow" />
+    <item
+        android:id="@+id/more_volume"
+        android:title="more volume" />
+    <item
+        android:id="@+id/density"
+        android:title="density" />
+    <item
+        android:id="@+id/vibrate"
+        android:title="a vibrant colour for longer" />
+    <item
+        android:id="@+id/discipline"
+        android:title="discipline frizz-free" />
+    <item
+        android:id="@+id/disciplined_curls"
+        android:title="disciplined curls" />
+    <item
+        android:id="@+id/revitalization"
+        android:title="revitalization" />
+
+</menu>

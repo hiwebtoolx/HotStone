@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/ic_health"
+            android:title="@string/customer_s_health" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/hammam_and_body_scrub" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_face"
+            android:title="@string/facial_treatment" />
+        <item
+            android:id="@+id/nav_acrylic"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/acrylic_and_gel" />
+        <item
+            android:id="@+id/nav_keratin"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/keratin_consultation" />
+        <item
+            android:id="@+id/nav_manicure"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/manicure_pedicure" />
+        <item
+            android:id="@+id/nav_massage"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/massage_consultation" />
+
+        <item
+            android:id="@+id/nav_visits"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/visits" />
+
+        <item
+            android:id="@+id/nav_hair_Treatment"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Hair Treatment" />
+
+        <item
+            android:id="@+id/nav_hair_colour"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Hair Colour" />
+
+
+    </group>
+    <item android:title="">
+        <menu>
+            <item
+                android:id="@+id/backend"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="@string/backend" />
+        </menu>
+    </item>
+    <item android:title="">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/search" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/logout" />
+        </menu>
+    </item>
+
+</menu>

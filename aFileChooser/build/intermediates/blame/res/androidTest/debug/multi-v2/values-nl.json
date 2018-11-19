@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "E:\\Courses JAVA C# WEB\\project review\\3bas\\Webtoolx-Hotstone2\\aFileChooser\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-nl\\values-nl.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\MAGIC\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\98deb4fb01e0438e3c8ac353ff3a61a8\\res\\values-nl\\values-nl.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        }
+    ]
+}
