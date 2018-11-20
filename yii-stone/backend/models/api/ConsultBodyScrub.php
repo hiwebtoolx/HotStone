@@ -47,7 +47,7 @@ class ConsultBodyScrub extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'body_scrub';
+        return 'consult_body_scrub';
     }
 
     /**
@@ -165,5 +165,14 @@ class ConsultBodyScrub extends \yii\db\ActiveRecord
 //                'thumbUrl' => '/posts/thumbs/[[pk]][[basename]]',
 //            ],
         ];
+    }
+
+        public function fields()
+    {
+        $fields = parent::fields();
+        $fields['created_at'] = function() {
+            return date('d-m-Y',($this->created_at)) ; ;
+        }; 
+        return $fields;
     }
 }

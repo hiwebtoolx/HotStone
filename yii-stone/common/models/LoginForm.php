@@ -11,6 +11,7 @@ class LoginForm extends Model
 {
     public $username;
     public $password;
+    public $token ='' ;
     public $rememberMe = true;
 
     private $_user;
@@ -48,7 +49,8 @@ class LoginForm extends Model
         }
     }
 
-    /**
+
+   /**
      * Logs in a user using the provided username and password.
      *
      * @return bool whether the user is logged in successfully
@@ -57,6 +59,23 @@ class LoginForm extends Model
     {
         if ($this->validate()) {
             return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);
+        }
+        
+        return false;
+    }
+
+
+
+    /**
+     * Logs in a user using the provided username and password.
+     *
+     * @return bool whether the user is logged in successfully
+     */
+    public function loginToken()
+    {
+        $this->getUserToken() ;
+        if (isset($this->_user->id)) {
+            return Yii::$app->user->login($this->getUserToken(), $this->rememberMe ? 3600 * 24 * 30 : 0);
         }
         
         return false;
@@ -75,4 +94,16 @@ class LoginForm extends Model
 
         return $this->_user;
     }
+
+
+        protected function getUserToken()
+    {
+        if ($this->_user === null) {
+            $this->_user = User::findIdentityByAccessToken($this->token);
+        }
+
+        return $this->_user;
+    }
+
+
 }

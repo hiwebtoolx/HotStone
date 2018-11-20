@@ -9,7 +9,7 @@ class HealthController extends \yii\rest\ActiveController
 {
     public $modelClass = 'backend\models\api\Health';
 
-    public function actionSearch()
+    public function actionSearch($one='')
     {
 
 
@@ -19,8 +19,8 @@ class HealthController extends \yii\rest\ActiveController
         $health = Health::find()
             ->joinWith('user')
             ->where(['health.user_id' => $id])
-            ->orderBy(['id' => SORT_DESC])
-            ->one();
+            ->orderBy(['id' => SORT_DESC]);
+            if ($one <> '' ) $health = $health->one(); else  $health = $health->all();
         if(count($health)){
             return $health;
             //return ['id' => $user->id , 'name' => $user->profile->name , 'email' => $user->email , 'phone' => $phone];

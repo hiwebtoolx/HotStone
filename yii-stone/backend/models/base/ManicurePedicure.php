@@ -82,9 +82,9 @@ class ManicurePedicure extends \yii\db\ActiveRecord
         return [
             [['user_id','branch_id',  'cuticle_condition', 'blood_circulation'], 'required'],
             [['user_id', 'rate','branch_id', 'created_by', 'created_at', 'updated_by', 'updated_at', 'deleted_by', 'deleted_at'], 'integer'],
-            [['others', 'cuticle_condition', 'blood_circulation'], 'string'],
+            [['client_signature', 'tech_signature','others', 'cuticle_condition', 'blood_circulation','treatment_given','comments','product_suggested'], 'string'],
             [['diabetes', 'cuts', 'eczema', 'psoriasis', 'viens_problems', 'arthritis', 'medical_oedema', 'recent_fectures', 'rated', 'lock'], 'default', 'value' => 0],
-            [['client_signature', 'tech_signature', 'date_signature'], 'string', 'max' => 255],
+            [[ 'date_signature'], 'string', 'max' => 255],
             [['lock'], 'default', 'value' => '0'],
             [['lock'], 'mootensai\components\OptimisticLockValidator']
         ];
@@ -116,6 +116,9 @@ class ManicurePedicure extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('hstone', 'ID'),
+            'comments' => Yii::t('hstone', 'Comments'),
+            'product_suggested' => Yii::t('hstone', 'Product suggested'),
+            'treatment_given' => Yii::t('hstone', 'Treatment given'),
             'user_id' => Yii::t('hstone', 'Client'),
             'diabetes' => Yii::t('hstone', 'Diabetes'),
             'cuts' => Yii::t('hstone', 'Cuts'),
@@ -173,23 +176,27 @@ class ManicurePedicure extends \yii\db\ActiveRecord
      */
     public function behaviors()
     {
-        return [
+        $behaviors = [
             'timestamp' => [
                 'class' => TimestampBehavior::className(),
                 'createdAtAttribute' => 'created_at',
                 'updatedAtAttribute' => 'updated_at',
                 'value' => time(),
             ],
-            'blameable' => [
-                'class' => BlameableBehavior::className(),
-                'createdByAttribute' => 'created_by',
-                'updatedByAttribute' => 'updated_by',
-            ],
+
             'uuid' => [
                 'class' => UUIDBehavior::className(),
                 'column' => 'id',
             ],
         ];
+        if (Yii::$app->request->post('created_by') == '' ){
+            $behaviors['blameable'] = [
+                'class' => BlameableBehavior::className(),
+                'createdByAttribute' => 'created_by',
+                'updatedByAttribute' => 'updated_by',
+            ];
+        } 
+        return  $behaviors ; 
     }
 
     /**
@@ -223,4 +230,13 @@ class ManicurePedicure extends \yii\db\ActiveRecord
         $query = new \backend\models\ManicurePedicureQuery(get_called_class());
         return $query->where(['manicure_pedicure.deleted_by' => 0]);
     }
+    public function fields()
+    {
+        $fields = parent::fields();
+        $fields['created_at'] = function() {
+            return date('d-m-Y',($this->created_at)) ; ;
+        }; 
+        return $fields;
+    }
+
 }

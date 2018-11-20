@@ -27,7 +27,12 @@ use yii\widgets\ActiveForm;
         ],
     ]); ?>
 
+    <?= $form->field($model, 'services_given')->dropDownList([ 'Apply acrylic' => 'Apply acrylic', 'remove acrylic' => 'Remove acrylic', 'remove and apply' => 'Remove and apply', ], ['prompt' => '']) ?>
 
+    <?= $form->field($model, 'product_suggested')->textarea(['rows' => 6]) ?>
+
+    <?= $form->field($model, 'comments')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'lock', ['template' => '{input}'])->textInput(['style' => 'display:none']); ?>
     <div class="row">
         <div class="col-md-6">
             <?php // Usage with ActiveForm and model

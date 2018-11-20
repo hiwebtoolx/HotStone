@@ -90,7 +90,7 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
         'If_yes_when',
         'which_hammam_or_body_scrub_do_you_prefer',
-        'client_commnet',
+        'client_review',
         ['attribute' => 'lock', 'visible' => false],
     ];
     echo DetailView::widget([

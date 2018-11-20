@@ -104,7 +104,9 @@ $this->params['breadcrumbs'][] = $this->title;
         'others:ntext',
         'cuticle_condition',
         'blood_circulation',
-
+        'treatment_given',
+        'product_suggested:ntext',
+        'comments:ntext',
         ['attribute' => 'lock', 'visible' => false],
     ];
     echo DetailView::widget([
@@ -118,7 +120,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <tr>
             <th colspan="2"><?=Yii::t('hstone' , 'Client Rate')?></th>
             <td colspan="2"><?php
-                if($model->rated != 0){
+                if($model->rate != 0){
                     echo  \kartik\rating\StarRating::widget([
                         'name' => 'rate',
                         'value' => $model->rate,

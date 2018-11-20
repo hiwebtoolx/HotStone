@@ -104,6 +104,8 @@ $this->params['breadcrumbs'][] = $this->title;
         'hair_specialist_name',
         'product_name',
         'notes:ntext',
+        'product_suggested:ntext',
+        'comments:ntext',
         ['attribute' => 'lock', 'visible' => false],
     ];
     echo DetailView::widget([

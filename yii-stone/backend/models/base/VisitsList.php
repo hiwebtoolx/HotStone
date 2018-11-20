@@ -6,7 +6,7 @@ use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\behaviors\BlameableBehavior;
 use mootensai\behaviors\UUIDBehavior;
-
+use common\models\User;
 /**
  * This is the base model class for table "visits_list".
  *
@@ -75,7 +75,7 @@ class VisitsList extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['branch_id', 'user_id', 'visit_date', 'treatment_given', 'retail_product', 'technician_name', 'comments', 'rated', 'rate', 'client_signature', 'tech_signature', 'date_signature', 'created_at', 'updated_at', 'created_by', 'updated_by', 'lock', 'deleted_by', 'deleted_at'], 'required'],
+            [['branch_id', 'user_id'], 'required'],
             [['branch_id', 'user_id', 'rate', 'created_at', 'updated_at', 'created_by', 'updated_by', 'deleted_by', 'deleted_at'], 'integer'],
             [['visit_date'], 'safe'],
             [['treatment_given', 'retail_product', 'comments'], 'string'],
@@ -141,7 +141,7 @@ class VisitsList extends \yii\db\ActiveRecord
      */
     public function getUpdatedBy()
     {
-        return $this->hasOne(\backend\models\User::className(), ['id' => 'updated_by']);
+        return $this->hasOne(User::className(), ['id' => 'updated_by']);
     }
         
     /**
@@ -149,7 +149,7 @@ class VisitsList extends \yii\db\ActiveRecord
      */
     public function getUser()
     {
-        return $this->hasOne(\backend\models\User::className(), ['id' => 'user_id']);
+        return $this->hasOne(User::className(), ['id' => 'user_id']);
     }
         
     /**
@@ -157,7 +157,7 @@ class VisitsList extends \yii\db\ActiveRecord
      */
     public function getBranch()
     {
-        return $this->hasOne(\backend\models\Branch::className(), ['id' => 'branch_id']);
+        return $this->hasOne(Branch::className(), ['id' => 'branch_id']);
     }
     
     /**
@@ -166,23 +166,27 @@ class VisitsList extends \yii\db\ActiveRecord
      */
     public function behaviors()
     {
-        return [
+        $behaviors = [
             'timestamp' => [
                 'class' => TimestampBehavior::className(),
                 'createdAtAttribute' => 'created_at',
                 'updatedAtAttribute' => 'updated_at',
                 'value' => time(),
             ],
-            'blameable' => [
-                'class' => BlameableBehavior::className(),
-                'createdByAttribute' => 'created_by',
-                'updatedByAttribute' => 'updated_by',
-            ],
+
             'uuid' => [
                 'class' => UUIDBehavior::className(),
                 'column' => 'id',
             ],
         ];
+        if (Yii::$app->request->post('created_by') == '' ){
+            $behaviors['blameable'] = [
+                'class' => BlameableBehavior::className(),
+                'createdByAttribute' => 'created_by',
+                'updatedByAttribute' => 'updated_by',
+            ];
+        } 
+        return  $behaviors ; 
     }
 
     /**

@@ -3,13 +3,15 @@
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 use kartik\grid\GridView;
-
+use backend\models\api\User; ;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Visits */
 
 $this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('stone', 'Visits'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+
+  $user = User::findOne(intval($model->user_id));
 ?>
 <div class="visits-view">
 
@@ -50,10 +52,24 @@ $this->params['breadcrumbs'][] = $this->title;
             'label' => Yii::t('stone', 'User'),
         ],
         'visit_date',
-        'treatment_given:ntext',
-        'retail_product:ntext',
-        'technician_name',
-
+        
+        [
+            'attribute' => 'user_id',
+            'label' => Yii::t('hstone', 'Fullname'),
+            'value'=> @$user->profile->name
+        ],
+        [
+            'attribute' => 'user_id',
+            'label' => Yii::t('hstone', 'Email'),
+            'value'=> @$user->email
+        ],
+        [
+            'attribute' => 'user_id',
+            'label' => Yii::t('hstone', 'Phone'),
+            'value'=> @$user->profile->phone
+        ],
+        'interests:ntext' , 
+        'product_suggested:ntext',
         'comments:ntext',
 
         ['attribute' => 'lock', 'visible' => false],

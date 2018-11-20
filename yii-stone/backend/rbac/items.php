@@ -139,6 +139,8 @@ return [
             'Customers Manicur',
             'Customers massage',
             'Customers Visits',
+            'Customers Hair Treatment',
+            'Customers Hair Colour',
             'Branches',
         ],
     ],
@@ -152,6 +154,12 @@ return [
         'type' => 2,
     ],
     '/hairmackup/*' => [
+        'type' => 2,
+    ],
+    '/hair-treatment/*' => [
+        'type' => 2,
+    ],
+    '/hair-colour/*' => [
         'type' => 2,
     ],
     '/salonarea/*' => [
@@ -242,6 +250,8 @@ return [
             'Customers Acrylic',
             'Customers Body Scrub',
             'Customers Facial',
+            'Customers Hair Treatment',
+            'Customers Hair Colour'
         ],
     ],
     '/fronthouse/*' => [
@@ -331,10 +341,23 @@ return [
             '/visits/*',
         ],
     ],
+    'Customers Hair Treatment' => [
+        'type' => 2,
+        'children' => [
+            '/hair-treatment/*',
+        ],
+    ],
+    'Customers Hair Colour' => [
+        'type' => 2,
+        'children' => [
+            '/hair-colour/*',
+        ],
+    ],
     'Branches' => [
         'type' => 2,
         'children' => [
             '/branch/*',
         ],
     ],
+ 
 ];

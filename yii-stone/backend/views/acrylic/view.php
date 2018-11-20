@@ -52,6 +52,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 return \dektrium\user\models\Profile::find()->where(['user_id' => $model->user->id])->one()->name ;
             }
         ],
+        'services_given',
+        'product_suggested:ntext',
+        'comments:ntext',
+        
         ['attribute' => 'lock', 'visible' => false],
 
     ];
@@ -66,7 +70,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <tr>
             <th colspan="2"><?=Yii::t('hstone' , 'Client Rate')?></th>
             <td colspan="2"><?php
-                if($model->rated != 0){
+                if($model->rate != 0){
                     echo  \kartik\rating\StarRating::widget([
                         'name' => 'rate',
                         'value' => $model->rate,

@@ -4,7 +4,26 @@ use yii\helpers\Html;
 /* @var $this \yii\web\View */
 /* @var $content string */
 ?>
+<style type="text/css">
+@media  only screen and (min-width: 769px) and (max-width: 1281px) {
+    .skin-red .main-header .navbar , .main-header {
+       
+        display: none ; 
 
+    }
+}
+
+
+@media (max-width:768px) {
+    .main-header .logo{
+       
+        display: none ; 
+
+    }
+
+}
+
+</style>
 <header class="main-header">
 
     <?= Html::a('<span class="logo-mini">APP</span><span class="logo-lg">' . Yii::$app->name . '</span>', Yii::$app->homeUrl, ['class' => 'logo']) ?>

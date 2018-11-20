@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'attribute' => 'user.username',
             'label' => Yii::t('stone', 'User'),
         ],
-        [
+         [
             'attribute' => 'are_you_pregnant',
             'value' => function($model){
                 return $model->are_you_pregnant == 0 ? Yii::t('stone' , 'No') :Yii::t('stone' , 'Yes');
@@ -83,6 +83,8 @@ $this->params['breadcrumbs'][] = $this->title;
         'hair_specialist_name',
         'product_name',
         'notes:ntext',
+        'product_suggested:ntext',
+        'comments:ntext',
         ['attribute' => 'lock', 'visible' => false],
     ];
     echo DetailView::widget([

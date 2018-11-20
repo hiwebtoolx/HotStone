@@ -19,7 +19,7 @@ use backend\models\Visits;
     {
         return [
             [['id', 'user_id','branch_id', 'visit_date', 'rate', 'created_at', 'updated_at', 'created_by', 'updated_by', 'deleted_by', 'deleted_at'], 'integer'],
-            [['treatment_given', 'retail_product', 'technician_name', 'comments', 'rated', 'client_signature', 'tech_signature', 'date_signature', 'lock'], 'safe'],
+            [[ 'fullname', 'comments', 'rated', 'client_signature', 'tech_signature', 'date_signature', 'lock'], 'safe'],
         ];
     }
 
@@ -71,10 +71,7 @@ use backend\models\Visits;
             'deleted_at' => $this->deleted_at,
         ]);
 
-        $query->andFilterWhere(['like', 'treatment_given', $this->treatment_given])
-            ->andFilterWhere(['like', 'retail_product', $this->retail_product])
-            ->andFilterWhere(['like', 'technician_name', $this->technician_name])
-            ->andFilterWhere(['like', 'comments', $this->comments])
+        $query->andFilterWhere(['like', 'comments', $this->comments])
             ->andFilterWhere(['like', 'rated', $this->rated])
             ->andFilterWhere(['like', 'client_signature', $this->client_signature])
             ->andFilterWhere(['like', 'tech_signature', $this->tech_signature])

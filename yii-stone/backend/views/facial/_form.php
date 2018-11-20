@@ -108,7 +108,7 @@ use kartik\rating\StarRating;
 
     <div class="row">
         <div class="col-md-6">
-            <?= $form->field($model, 'type')->dropDownList([ 'combination' => 'Combination', 'oily' => 'Oily', 'dry' => 'Dry', ], ['prompt' => '']) ?>
+            <?= $form->field($model, 'type')->dropDownList([ 'dry' => 'Dry', 'oily' => 'Oily', 'combination' => 'Combination', 'mature' => 'Mature', 'sensitive' => 'Sensitive', 'normal' => 'Normal', 'acne' => 'Acne', ], ['prompt' => '']) ?>
 
         </div>
         <div class="col-md-6">
@@ -118,10 +118,10 @@ use kartik\rating\StarRating;
 
     <div class="row">
         <div class="col-md-6">
-            <?= $form->field($model, 'texture')->dropDownList([ 'fine' => 'Fine', 'coarse' => 'Coarse', ], ['prompt' => '']) ?>
+            <?= $form->field($model, 'texture')->dropDownList([ 'Normal' => 'Normal', 'fine' => 'Fine', 'thick' => 'Thick', ], ['prompt' => '']) ?>
         </div>
         <div class="col-md-6">
-            <?= $form->field($model, 'circulation')->dropDownList([ 'good' => 'Good', 'average' => 'Average', 'poor' => 'Poor', ], ['prompt' => '']) ?>
+             <?= $form->field($model, 'circulation')->dropDownList([ 'erythema' => 'Erythema', 'erythrose' => 'Erythrose', 'telangiectasia' => 'Telangiectasia', 'rosacea' => 'Rosacea', ], ['prompt' => '']) ?>
         </div>
     </div>
 
@@ -154,20 +154,67 @@ use kartik\rating\StarRating;
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-md-6">
+           <?= $form->field($model, 'hydration')->dropDownList([ 'superficial' => 'Superficial', 'dehydration' => 'Dehydration', 'deep dehydration' => 'Deep dehydration', ], ['prompt' => '']) ?>
+        </div>
+        <div class="col-md-6">
+             <?= $form->field($model, 'teint')->dropDownList([ 'scramble' => 'Scramble', 'bilious' => 'Bilious', 'pink' => 'Pink', 'dull' => 'Dull', 'pale' => 'Pale', ], ['prompt' => '']) ?>
+        </div>
+    </div>
+
 
     <div class="row">
         <div class="col-md-6">
-            <?= $form->field($model, 'present_skincare_routine')->textInput(['maxlength' => true, 'placeholder' => 'Present Skincare Routine']) ?>
+          <?= $form->field($model, 'secretions')->dropDownList([ 'adipic' => 'Adipic', 'asphyxia' => 'Asphyxia', 'comedone' => 'Comedone', 'seborrheic' => 'Seborrheic', 'acne' => 'Acne', 'mixed' => 'Mixed', 'normal' => 'Normal', ], ['prompt' => '']) ?>
         </div>
         <div class="col-md-6">
-            <?= $form->field($model, 'hands')->textInput(['maxlength' => true, 'placeholder' => 'Hands']) ?>
+          <?= $form->field($model, 'circulation_anomaly')->dropDownList([ 'angioma' => 'Angioma', 'ruby points' => 'Ruby points', 'stellate angiomas' => 'Stellate angiomas', ], ['prompt' => '']) ?>   
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-6">
+          <?= $form->field($model, 'pigmentation_anomaly')->dropDownList([ 'Ephelides' => 'Ephelides', 'chloasma' => 'Chloasma', 'senile spots' => 'Senile spots', 'albinism' => 'Albinism', 'vitiligo' => 'Vitiligo', ], ['prompt' => '']) ?>
+        </div>
+        <div class="col-md-6">
+           <?= $form->field($model, 'more_anomalies')->dropDownList([ 'aqueous pockets' => 'Aqueous pockets', 'fat pockets' => 'Fat pockets', 'milia grains' => 'Milia grains', 'double chin' => 'Double chin', 'keratosis' => 'Keratosis', 'cysts' => 'Cysts', 'scars' => 'Scars', 'naevus' => 'Naevus', 'warts' => 'Warts', ], ['prompt' => '']) ?>  
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+          <?= $form->field($model, 'dermatosis')->dropDownList([ 'eczema' => 'Eczema', 'psoriasis' => 'Psoriasis', 'herpes' => 'Herpes', ], ['prompt' => '']) ?>
+        </div>
+        <div class="col-md-6">
+          <?= $form->field($model, 'tonicity')->dropDownList([ 'firm' => 'Firm', 'light' => 'Light', 'loose' => 'Loose', ], ['prompt' => '']) ?>   
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+          <?= $form->field($model, 'soins_recommended')->dropDownList([ 'soothe' => 'Soothe', 'nourish' => 'Nourish', 'clarify' => 'Clarify', 'normalize' => 'Normalize', 'moisturize' => 'Moisturize', 'anti-age' => 'Anti-age', 'energize' => 'Energize', ], ['prompt' => '']) ?>
+        </div>
+      
+    </div>
+
+
+
+    <h4 style="background-color:#3c8dbc; color: #fff; font-size: 18px; text-align: center; padding: 7px 10px; margin-top: 0;">
+        <?=Yii::t('stone' , 'Present Skincare Routine')?>
+    </h4>
+    <div class="row">
+        <div class="col-md-6">
+            <?= $form->field($model, 'hands')->textInput(['maxlength' => true, 'placeholder' => 'Hands']) ?>
+        </div>
+        <div class="col-md-6">
             <?= $form->field($model, 'feet')->textInput(['maxlength' => true, 'placeholder' => 'Feet']) ?>
         </div>
+
+    </div>
+
+    <div class="row">
+
         <div class="col-md-6">
             <?= $form->field($model, 'miscellaneous')->textInput(['maxlength' => true, 'placeholder' => 'Miscellaneous']) ?>
         </div>
@@ -191,7 +238,8 @@ use kartik\rating\StarRating;
     <?= $form->field($model, 'lock', ['template' => '{input}'])->textInput(['style' => 'display:none']); ?>
 
     <?= $form->field($model, 'notes')->textarea(['rows' => 6]) ?>
-
+    <?= $form->field($model, 'product_suggested')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'comments')->textarea(['rows' => 6]) ?>
     <div class="form-group">
     <?php if(Yii::$app->controller->action->id != 'save-as-new'): ?>
         <?= Html::submitButton($model->isNewRecord ? Yii::t('stone', 'Create') : Yii::t('stone', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

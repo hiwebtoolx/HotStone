@@ -79,19 +79,19 @@ class Keratin extends \yii\db\ActiveRecord
     }
 
     /**
-     * @inheritdoc
+     * @inheritdoc 
      */
     public function rules()
     {
         return [
             [['user_id','branch_id'], 'required'],
             [['user_id','branch_id', 'rate', 'created_at', 'updated_at', 'created_by', 'updated_by'], 'integer'],
-            [['notes'], 'string'],
+            [['notes','comments','product_suggested', 'client_signature', 'tech_signature'], 'string'],
             [['are_you_pregnant', 'did_you_color_your_hair', 'did_you_make_highlight', 'did_you_put_henna', 'did_you_make_hair_straightening', 'did_you_make_removing_color', 'did_you_make_keratin_before', 'rated', 'lock'], 'default', 'value' => 0],
-            [['when_was_your_last_delivery', 'color_when', 'highlight_when', 'henna_when', 'straightening_when', 'removing_color_when', 'keratin_befor_when'], 'default', 'max' => 50],
-            [['hair_specialist_name', 'product_name', 'client_signature', 'tech_signature', 'date_signature'], 'string', 'max' => 255],
-            [['lock'], 'default', 'value' => '0'],
-            [['lock'], 'mootensai\components\OptimisticLockValidator']
+            [['when_was_your_last_delivery', 'color_when', 'highlight_when', 'henna_when', 'straightening_when', 'removing_color_when', 'keratin_befor_when'], 'string', 'max' => 50],
+            [['hair_specialist_name', 'product_name', 'date_signature'], 'string', 'max' => 255] 
+            // [['lock'], 'default', 'value' => '0'],
+            // [['lock'], 'mootensai\components\OptimisticLockValidator']
         ];
     }
 
@@ -121,6 +121,8 @@ class Keratin extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('hstone', 'ID'),
+            'comments' => Yii::t('hstone', 'Comments'),
+            'product_suggested' => Yii::t('hstone', 'Product Suggested'),
             'user_id' => Yii::t('hstone', 'User'),
             'are_you_pregnant' => Yii::t('hstone', 'Are You Pregnant ?'),
             'when_was_your_last_delivery' => Yii::t('hstone', 'When Was Your Last Delivery ?'),
@@ -184,23 +186,27 @@ class Keratin extends \yii\db\ActiveRecord
      */
     public function behaviors()
     {
-        return [
+        $behaviors = [
             'timestamp' => [
                 'class' => TimestampBehavior::className(),
                 'createdAtAttribute' => 'created_at',
                 'updatedAtAttribute' => 'updated_at',
                 'value' => time(),
             ],
-            'blameable' => [
-                'class' => BlameableBehavior::className(),
-                'createdByAttribute' => 'created_by',
-                'updatedByAttribute' => 'updated_by',
-            ],
+
             'uuid' => [
                 'class' => UUIDBehavior::className(),
                 'column' => 'id',
             ],
         ];
+        if (Yii::$app->request->post('created_by') == '' ){
+            $behaviors['blameable'] = [
+                'class' => BlameableBehavior::className(),
+                'createdByAttribute' => 'created_by',
+                'updatedByAttribute' => 'updated_by',
+            ];
+        } 
+        return  $behaviors ; 
     }
 
     /**
@@ -234,4 +240,14 @@ class Keratin extends \yii\db\ActiveRecord
         $query = new \backend\models\KeratinQuery(get_called_class());
         return $query->where(['keratin_consultation.deleted_by' => 0]);
     }
+
+    public function fields()
+    {
+        $fields = parent::fields();
+        $fields['created_at'] = function() {
+            return date('d-m-Y',($this->created_at)) ; ;
+        }; 
+        return $fields;
+    }
+    
 }

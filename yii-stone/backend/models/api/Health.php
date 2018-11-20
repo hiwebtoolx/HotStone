@@ -158,4 +158,14 @@ class Health extends \yii\db\ActiveRecord
     {
         return new HealthQuery(get_called_class());
     }
+
+    public function fields()
+    {
+        $fields = parent::fields();
+        $fields['created_at'] = function() {
+            return date('d-m-Y',($this->created_at)) ; ;
+        }; 
+        return $fields;
+    }
+    
 }

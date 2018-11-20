@@ -7,6 +7,36 @@ use yii\widgets\ActiveForm;
 /* @var $model backend\models\Visits */
 /* @var $form yii\widgets\ActiveForm */
 
+$user_details = Yii::$app->urlManager->createUrl('/visits/user-details') ; 
+$csrf = Yii::$app->request->getCsrfToken() ; 
+$script = <<< JS
+ $(document).ready(function() {
+ $("#visits-user_id").on('change', function() {
+ 
+ $.ajax({
+       url: '$user_details',
+       type: 'post',
+       data: {
+                 user: this.value , 
+                 _csrf : '$csrf'
+             },
+         success: function (data) {
+          $('#fullname').val(data.fullname);
+          $('#email').val(data.email);
+          $('#phone').val(data.phone);
+       } 
+
+  });  
+
+return false ; 
+
+});
+ $("#visits-user_id").change() ; 
+});
+JS;
+$this->registerJs($script);
+
+
 ?>
 
 <div class="visits-form">
@@ -44,15 +74,34 @@ use yii\widgets\ActiveForm;
         </div>
     </div>
 
+ <div class="row ">
+
+<div class="form-group col-md-4">
+<label class="control-label" for="visits-interests"><?=Yii::t('hstone', 'Fullname')?></label>
+
+  <?= Html::textInput('fullname', '', ['disabled'=>true,'class'=>'form-control','id'=>'fullname']); ?>
+<div class="help-block"></div>
+</div>
+
+<div class="form-group col-md-4">
+<label class="control-label" for="visits-interests"><?=Yii::t('hstone', 'Email')?></label>
+
+  <?= Html::textInput('email', '', ['disabled'=>true,'class'=>'form-control','id'=>'email']); ?>
+<div class="help-block"></div>
+</div>
 
 
+<div class="form-group col-md-4">
+<label class="control-label" for="visits-interests"><?=Yii::t('hstone', 'Phone')?></label>
 
-    <?= $form->field($model, 'treatment_given')->textarea(['rows' => 6]) ?>
+  <?= Html::textInput('phone', '', ['disabled'=>true,'class'=>'form-control','id'=>'phone']); ?>
+<div class="help-block"></div>
+</div>
 
-    <?= $form->field($model, 'retail_product')->textarea(['rows' => 6]) ?>
-
-    <?= $form->field($model, 'technician_name')->textInput(['maxlength' => true, 'placeholder' => 'Technician Name']) ?>
-
+</div>
+   
+    <?= $form->field($model, 'interests')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'product_suggested')->textarea(['rows' => 6]) ?>
     <?= $form->field($model, 'comments')->textarea(['rows' => 6]) ?>
 
     <?= $form->field($model, 'lock', ['template' => '{input}'])->textInput(['style' => 'display:none']); ?>

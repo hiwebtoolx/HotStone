@@ -71,13 +71,26 @@ $this->params['breadcrumbs'][] = $this->title;
         'wrinkles',
         'pores',
         'discoloration',
-        'present_skincare_routine',
+        'hydration',
+        'teint',
+        'secretions',
+        'circulation_anomaly',
+        'pigmentation_anomaly',
+        'more_anomalies',
+        'dermatosis',
+        'tonicity',
+        'soins_recommended',
+
+       // 'present_skincare_routine',
         'hands',
         'feet',
         'miscellaneous',
 
         ['attribute' => 'lock', 'visible' => false],
         'notes:ntext',
+        'product_suggested:ntext',
+        'comments:ntext',
+
     ];
     echo DetailView::widget([
         'model' => $model,
@@ -87,6 +100,26 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
     <table class="table table-striped table-bordered detail-view">
         <tbody>
+        <tr>
+            <th colspan="2"><?=Yii::t('hstone' , 'Rate')?></th>
+            <td colspan="2"><?php
+                if($model->rate != 0){
+                    echo  \kartik\rating\StarRating::widget([
+                        'name' => 'rate',
+                        'value' => $model->rate,
+                        'pluginOptions' => [
+                            'filledStar' => '<i class="glyphicon glyphicon-heart"></i>',
+                            'emptyStar' => '<i class="glyphicon glyphicon-heart-empty"></i>',
+                            'size' => 'xs',
+                            'readonly' => true,
+                            'showClear' => false,
+                            'showCaption' => false,
+                        ],
+                    ]);
+                }
+                ?></td>
+        </tr>
+
         <tr>
             <th><?=Yii::t('hstone' , 'Tech signature')?></th>
             <td><?= $model->tech_signature?></td>

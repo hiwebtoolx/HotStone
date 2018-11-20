@@ -21,6 +21,9 @@ return [
         'Customers Manicur',
         'Customers massage',
         'Customers Visits',
+        'Customers Hair Treatment',
+        'Customers Hair Colour',
+        'Customers Visits',
         'Branches',
     ],
     3 => [

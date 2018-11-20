@@ -17,14 +17,14 @@ class Visits extends BaseVisits
     {
         return array_replace_recursive(parent::rules(),
 	    [
-            [['user_id','branch_id', 'visit_date', 'treatment_given', 'retail_product', 'technician_name'], 'required'],
+            [['user_id','branch_id', 'visit_date'], 'required'],
             [['user_id','branch_id', 'rate', 'created_at', 'updated_at', 'rated','created_by', 'updated_by', 'deleted_by', 'deleted_at'], 'integer'],
-            [['treatment_given', 'retail_product', 'comments'], 'string'],
+            [['client_signature', 'tech_signature','comments'], 'string'],
             [['visit_date'], 'safe'],
-            [['technician_name', 'client_signature', 'tech_signature', 'date_signature'], 'string', 'max' => 255],
-            [[ 'lock'], 'string', 'max' => 1],
-            [['lock'], 'default', 'value' => '0'],
-            [['lock'], 'mootensai\components\OptimisticLockValidator']
+            [[  'date_signature'], 'string', 'max' => 255],
+           // [[ 'lock'], 'string', 'max' => 1],
+            // [['lock'], 'default', 'value' => 0],
+            // [['lock'], 'mootensai\components\OptimisticLockValidator']
         ]);
     }
 	

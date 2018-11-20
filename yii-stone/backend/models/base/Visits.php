@@ -74,13 +74,13 @@ class Visits extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id','branch_id', 'visit_date', 'treatment_given', 'retail_product', 'technician_name'], 'required'],
+            [['user_id','branch_id'  ], 'required'],
             [['user_id','branch_id', 'rate', 'created_at', 'updated_at', 'rated','created_by', 'updated_by', 'deleted_by', 'deleted_at'], 'integer'],
-            [['treatment_given', 'retail_product', 'comments'], 'string'],
+            [[  'client_signature', 'tech_signature','comments','product_suggested','interests'], 'string'],
             [['visit_date'], 'safe'],
-            [['technician_name', 'client_signature', 'tech_signature', 'date_signature'], 'string', 'max' => 255],
-            [[ 'lock'], 'string', 'max' => 1],
-            [['lock'], 'default', 'value' => '0'],
+            [[ 'date_signature'], 'string', 'max' => 255],
+            //[[ 'lock'], 'string', 'max' => 1],
+            [['lock'], 'default', 'value' => 0],
             [['lock'], 'mootensai\components\OptimisticLockValidator']
         ];
     }
@@ -111,11 +111,12 @@ class Visits extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('hstone', 'ID'),
+            'interests'=> Yii::t('hstone', 'What interests you about our products or services ?'),
             'user_id' => Yii::t('hstone', 'Client'),
             'visit_date' => Yii::t('hstone', 'Visit Date'),
-            'treatment_given' => Yii::t('hstone', 'Treatment Given'),
-            'retail_product' => Yii::t('hstone', 'Retail Product'),
-            'technician_name' => Yii::t('hstone', 'Technician Name'),
+            'fullname' => Yii::t('hstone', 'Fullname'),
+            'email' => Yii::t('hstone', 'Email'),
+            'phone' => Yii::t('hstone', 'Phone'),
             'comments' => Yii::t('hstone', 'Comments'),
             'rated' => Yii::t('hstone', 'Rated'),
             'rate' => Yii::t('hstone', 'Rate'),
@@ -163,23 +164,37 @@ class Visits extends \yii\db\ActiveRecord
      */
     public function behaviors()
     {
-        return [
+        $behaviors = [
             'timestamp' => [
                 'class' => TimestampBehavior::className(),
                 'createdAtAttribute' => 'created_at',
                 'updatedAtAttribute' => 'updated_at',
                 'value' => time(),
             ],
-            'blameable' => [
-                'class' => BlameableBehavior::className(),
-                'createdByAttribute' => 'created_by',
-                'updatedByAttribute' => 'updated_by',
-            ],
+
             'uuid' => [
                 'class' => UUIDBehavior::className(),
                 'column' => 'id',
             ],
         ];
+        if (Yii::$app->request->post('created_by') == '' ){
+
+            $behaviors['blameable'] = [
+                'class' => BlameableBehavior::className(),
+                'createdByAttribute' => 'created_by',
+                'updatedByAttribute' => 'updated_by',
+            ];
+
+
+        }else{
+          
+            $behaviors['blameabletime'] = [
+                'class' => TimestampBehavior::className(),
+                'createdAtAttribute' => 'visit_date',
+                 'value' => date('Y-m-d'), 
+            ];  
+        } 
+        return  $behaviors ; 
     }
 
     /**
@@ -213,4 +228,14 @@ class Visits extends \yii\db\ActiveRecord
         $query = new \backend\models\VisitsQuery(get_called_class());
         return $query->where(['visits_list.deleted_by' => 0]);
     }
+
+    public function fields()
+    {
+        $fields = parent::fields();
+        $fields['created_at'] = function() {
+            return date('d-m-Y',($this->created_at)) ; ;
+        }; 
+        return $fields;
+    }
+
 }

@@ -229,6 +229,24 @@
                                     ['label' => Yii::t('hstone', 'New'), 'icon' => 'circle-o', 'url' => ['/facial/create'],],
                                 ],
                             ],
+                         [
+                                'label' => Yii::t('hstone', 'Hair Treatment'),
+                                'icon' => 'circle-o',
+                                'url' => '#',
+                                'items' => [
+                                    ['label' => Yii::t('hstone', 'List'), 'icon' => 'circle-o', 'url' => ['/hair-treatment'],],
+                                    ['label' => Yii::t('hstone', 'New'), 'icon' => 'circle-o', 'url' => ['/hair-treatment/create'],],
+                                ],
+                            ],
+                         [
+                                'label' => Yii::t('hstone', 'Hair colour consultation'),
+                                'icon' => 'circle-o',
+                                'url' => '#',
+                                'items' => [
+                                    ['label' => Yii::t('hstone', 'List'), 'icon' => 'circle-o', 'url' => ['/hair-colour'],],
+                                    ['label' => Yii::t('hstone', 'New'), 'icon' => 'circle-o', 'url' => ['/hair-colour/create'],],
+                                ],
+                            ],
                             [
                                 'label' => Yii::t('hstone', 'keratin consultation'),
                                 'icon' => 'circle-o',

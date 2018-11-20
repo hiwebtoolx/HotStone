@@ -27,11 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'user.username',
                 'label' => Yii::t('stone', 'User')
             ],
-        [
-            'attribute' => 'user.username',
-            'label' => Yii::t('stone', 'User'),
-        ],
-        [
+      [
             'attribute' => 'branch.title_en',
             'label' => Yii::t('stone', 'Branch')
         ],
@@ -86,6 +82,9 @@ $this->params['breadcrumbs'][] = $this->title;
         'others:ntext',
         'cuticle_condition',
         'blood_circulation',
+        'treatment_given',
+        'product_suggested:ntext',
+        'comments:ntext',
         ['attribute' => 'lock', 'visible' => false],
     ];
     echo DetailView::widget([
@@ -95,7 +94,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
         <table class="table table-striped table-bordered detail-view">
             <tbody>
-            <tr>
+             <tr>
                 <th colspan="2"><?=Yii::t('hstone' , 'Client Rate')?></th>
                 <td colspan="2"><?php
                     if($model->rated != 0){
@@ -103,7 +102,6 @@ $this->params['breadcrumbs'][] = $this->title;
                     }
                     ?></td>
             </tr>
-
             </tbody>
         </table>
         <table class="table table-striped table-bordered detail-view">

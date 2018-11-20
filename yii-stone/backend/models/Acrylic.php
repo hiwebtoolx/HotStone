@@ -20,9 +20,10 @@ class Acrylic extends BaseAcrylic
 	    [
             [['user_id','branch_id'], 'required'],
             [['user_id', 'rate','branch_id', 'created_by', 'updated_by', 'created_at', 'updated_at', 'deleted_by','rated', 'daleted_at'], 'integer'],
-            [['client_signature', 'tech_signature', 'date_signature'], 'string', 'max' => 255],
-            [['lock'], 'string', 'max' => 1],
-            [['lock'], 'default', 'value' => '0'],
+             [['services_given','comments','product_suggested','client_signature', 'tech_signature'], 'string'],
+            [['client_signature'], 'string', 'max' => 255],
+            //[['lock'], 'string', 'max' => 1],
+            [['lock'], 'default', 'value' => 0],
             [['lock'], 'mootensai\components\OptimisticLockValidator']
         ]);
     }

@@ -76,7 +76,9 @@ class SiteController extends Controller
         }
 
         $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
+        if ((Yii::$app->request->get('auth_token'))){
+            $model->token = Yii::$app->request->get('auth_token'); 
+            if ($model->load(Yii::$app->request->post()) && $model->loginToken()) {
             return $this->goBack();
         } else {
             $model->password = '';
@@ -85,6 +87,18 @@ class SiteController extends Controller
                 'model' => $model,
             ]);
         }
+        }else{
+           if ($model->load(Yii::$app->request->post()) && $model->login()) {
+            return $this->goBack();
+        } else {
+            $model->password = '';
+
+            return $this->render('login', [
+                'model' => $model,
+            ]);
+        }       
+        }
+       
     }
 
     /**

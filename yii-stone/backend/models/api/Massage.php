@@ -47,7 +47,7 @@ class Massage extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['branch_id', 'user_id'], 'required'],
+            [['branch_id', 'user_id','how_do_you_prefer_your_massage_pressure','massage_do_you_prefer'], 'required'],
             [['branch_id', 'user_id', 'created_by', 'updated_by', 'created_at', 'updated_at', 'rate', 'deleted_by', 'deleted_at'], 'integer'],
             [['how_do_you_prefer_your_massage_pressure', 'client_signature', 'tech_signature'], 'string'],
             [['massage_do_you_prefer', 'date_signature','client_review'], 'string', 'max' => 255],
@@ -128,4 +128,13 @@ class Massage extends \yii\db\ActiveRecord
     {
         return new MassageQuery(get_called_class());
     }
+    public function fields()
+    {
+        $fields = parent::fields();
+        $fields['created_at'] = function() {
+            return date('d-m-Y',($this->created_at)) ; ;
+        }; 
+        return $fields;
+    }
+    
 }

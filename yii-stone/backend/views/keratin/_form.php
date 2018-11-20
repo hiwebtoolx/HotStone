@@ -115,6 +115,8 @@ use \kartik\widgets\SwitchInput;
     <?= $form->field($model, 'product_name')->textInput(['maxlength' => true, 'placeholder' => 'Product Name']) ?>
 
     <?= $form->field($model, 'notes')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'product_suggested')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'comments')->textarea(['rows' => 6]) ?>
 
     <?= $form->field($model, 'lock', ['template' => '{input}'])->textInput(['style' => 'display:none']); ?>
 

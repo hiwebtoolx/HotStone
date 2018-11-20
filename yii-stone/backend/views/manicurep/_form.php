@@ -91,7 +91,11 @@ use \kartik\widgets\SwitchInput;
     <?= $form->field($model, 'cuticle_condition')->dropDownList([ 'Excellent' => 'Excellent', 'Good' => 'Good', 'Fair' => 'Fair', 'Poor' => 'Poor', ], ['prompt' => '']) ?>
 
     <?= $form->field($model, 'blood_circulation')->dropDownList([ 'Good' => 'Good', 'Normal' => 'Normal', 'Poor' => 'Poor', '' => '', ], ['prompt' => '']) ?>
+    
+    <?= $form->field($model, 'treatment_given')->dropDownList([ 'simple manicure' => 'Simple manicure', 'simple pedicure' => 'Simple pedicure', 'spa manicure' => 'Spa manicure', 'spa pedicure' => 'Spa pedicure', 'anti-ageing' => 'Anti-ageing', 'paraffine' => 'Paraffine', ], ['prompt' => '']) ?>
 
+    <?= $form->field($model, 'product_suggested')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'comments')->textarea(['rows' => 6]) ?>
 
     <?= $form->field($model, 'lock', ['template' => '{input}'])->textInput(['style' => 'display:none']); ?>
 

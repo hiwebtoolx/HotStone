@@ -30,6 +30,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 return \dektrium\user\models\Profile::find()->where(['user_id' => $model->user->id])->one()->name ;
             }
         ],
+        'services_given',
+        'product_suggested:ntext',
+        'comments:ntext',
+        
         ['attribute' => 'lock', 'visible' => false],
 
     ];

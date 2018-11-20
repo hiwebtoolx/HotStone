@@ -41,7 +41,7 @@ use backend\models\Massage;
      */
     public function search($params)
     {
-        $query = Massage::find();
+        $query = Massage::find()->orderBy('id DESC');
         if(! Yii::$app->user->identity->isAdmin) {
             $query->andWhere(['branch_id' => Yii::$app->user->identity->profile->branch_id]);
         }

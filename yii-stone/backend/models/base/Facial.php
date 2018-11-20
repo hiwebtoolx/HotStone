@@ -13,7 +13,7 @@ use mootensai\behaviors\UUIDBehavior;
  *
  * @property integer $id
  * @property integer $user_id
- * @property string $date_of_last_period
+ * @property string $date_of_last_period 
  * @property string $allergies
  * @property string $medication
  * @property string $varicose_veins
@@ -62,7 +62,7 @@ class Facial extends \yii\db\ActiveRecord
     private $_rt_softdelete;
     private $_rt_softrestore;
 
-    public function __construct(){
+    public function __construct(){ 
         parent::__construct();
         $this->_rt_softdelete = [
             'deleted_by' => \Yii::$app->user->id,
@@ -96,7 +96,7 @@ class Facial extends \yii\db\ActiveRecord
         return [
             [['user_id','branch_id' , 'life_style', 'exercise', 'pregnancies', 'type', 'color', 'texture', 'circulation', 'muscle_tone', 'elasticity', 'imperfections_Irregularities', 'wrinkles', 'pores', 'discoloration',], 'required'],
             [['branch_id', 'user_id', 'rate', 'created_by', 'updated_by', 'created_at', 'updated_at', 'deleted_by', 'deleted_at'], 'integer'],
-            [['life_style', 'exercise', 'pregnancies', 'type', 'color', 'texture', 'circulation', 'muscle_tone', 'elasticity', 'imperfections_Irregularities', 'wrinkles', 'pores', 'discoloration', 'client_review', 'client_signature', 'tech_signature', 'notes'], 'string'],
+            [['life_style', 'exercise', 'pregnancies', 'type', 'color', 'texture', 'circulation', 'muscle_tone', 'elasticity', 'imperfections_Irregularities', 'wrinkles', 'pores', 'discoloration', 'client_review', 'client_signature', 'tech_signature', 'notes','product_suggested','comments','hydration','teint','secretions','circulation_anomaly','pigmentation_anomaly','more_anomalies','dermatosis','tonicity','soins_recommended'], 'string'],
             [['age'], 'string', 'max' => 10],
             [['date_of_last_period', 'allergies', 'medication', 'varicose_veins', 'epilepsy', 'respiratory', 'major_illness', 'major_surgery', 'kidney', 'cardiac', 'metal_pins', 'diet_present', 'present_skincare_routine', 'hands', 'feet', 'miscellaneous', 'date_signature'], 'string', 'max' => 255],
             [['rated', 'lock'], 'default', 'value' => 0],
@@ -130,6 +130,19 @@ class Facial extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('hstone', 'ID'),
+
+            'comments' => Yii::t('hstone', 'Comments'),
+            'product_suggested' => Yii::t('hstone', 'Product_suggested'),
+            'hydration' => Yii::t('hstone', 'Hydration'),
+            'teint' => Yii::t('hstone', 'Teint'),
+            'secretions' => Yii::t('hstone', 'Secretions'),
+            'circulation_anomaly' => Yii::t('hstone', 'Circulation anomaly'),
+            'pigmentation_anomaly' => Yii::t('hstone', 'Pigmentation anomaly'),
+            'more_anomalies' => Yii::t('hstone', 'More anomalies'),
+            'dermatosis' => Yii::t('hstone', 'Dermatosis'),
+            'tonicity' => Yii::t('hstone', 'Tonicity'),
+            'soins_recommended' => Yii::t('hstone', 'Soins recommended'),
+
             'user_id' => Yii::t('hstone', 'User'),
             'date_of_last_period' => Yii::t('hstone', 'Date Of Last Period'),
             'allergies' => Yii::t('hstone', 'Allergies'),
@@ -181,7 +194,7 @@ class Facial extends \yii\db\ActiveRecord
     {
         return $this->hasOne(User::className(), ['id' => 'updated_by']);
     }
-        
+
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -189,7 +202,7 @@ class Facial extends \yii\db\ActiveRecord
     {
         return $this->hasOne(User::className(), ['id' => 'created_by']);
     }
-        
+
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -204,23 +217,29 @@ class Facial extends \yii\db\ActiveRecord
      */
     public function behaviors()
     {
-        return [
+        $behaviors = [
             'timestamp' => [
                 'class' => TimestampBehavior::className(),
                 'createdAtAttribute' => 'created_at',
                 'updatedAtAttribute' => 'updated_at',
                 'value' => time(),
             ],
-            'blameable' => [
-                'class' => BlameableBehavior::className(),
-                'createdByAttribute' => 'created_by',
-                'updatedByAttribute' => 'updated_by',
-            ],
+
             'uuid' => [
                 'class' => UUIDBehavior::className(),
                 'column' => 'id',
             ],
         ];
+        if (Yii::$app->request->post('created_by') == '' ){
+            $behaviors['blameable'] = [
+                'class' => BlameableBehavior::className(),
+                'createdByAttribute' => 'created_by',
+                'updatedByAttribute' => 'updated_by',
+            ];
+        } 
+        return  $behaviors ; 
+
+
     }
 
     /**
@@ -246,7 +265,7 @@ class Facial extends \yii\db\ActiveRecord
      */
 
     /**
-     * @inheritdoc
+     * @inheritdoc 
      * @return \backend\models\FacialQuery the active query used by this AR class.
      */
     public static function find()
@@ -254,4 +273,15 @@ class Facial extends \yii\db\ActiveRecord
         $query = new \backend\models\FacialQuery(get_called_class());
         return $query->where(['facial_treatment.deleted_by' => 0]);
     }
+
+    public function fields()
+    {
+        $fields = parent::fields();
+        $fields['created_at'] = function() {
+            return date('d-m-Y',($this->created_at)) ; ;
+        }; 
+        return $fields;
+    }
+
+
 }

@@ -8,7 +8,7 @@ use backend\models\VisitsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use backend\models\api\User; ;
 /**
  * VisitsController implements the CRUD actions for Visits model.
  */
@@ -28,7 +28,7 @@ class VisitsController extends Controller
                 'rules' => [
                     [
                         'allow' => true,
-                        'actions' => ['index', 'view', 'create', 'update', 'delete', 'pdf', 'save-as-new'],
+                        'actions' => ['index', 'view', 'create', 'update', 'delete', 'pdf', 'save-as-new','user-details'],
                         'roles' => ['@']
                     ],
                     [
@@ -37,6 +37,27 @@ class VisitsController extends Controller
                 ]
             ]
         ];
+    }
+
+
+    /**
+     * Lists all Visits models.
+     * @return mixed
+     */
+    public function actionUserDetails()
+    {
+        if (Yii::$app->request->isAjax) {
+            \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+            $user = \Yii::$app->request->post('user');
+              $user = User::findOne(intval($user));
+              if (isset($user->id)){
+                return ['fullname'=>$user->profile->name,'email'=>$user->email,'phone'=>$user->profile->phone] ;
+              }else{
+                return ['fullname'=>'','email'=>'','phone'=>''] ;
+              }
+             
+ 
+        }
     }
 
     /**

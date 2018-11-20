@@ -70,9 +70,11 @@ class Acrylic extends \yii\db\ActiveRecord
         return [
             [['user_id','branch_id'], 'required'],
             [['user_id', 'rate','branch_id', 'created_by', 'updated_by', 'created_at', 'updated_at', 'deleted_by','rated', 'daleted_at'], 'integer'],
-            [['client_signature', 'tech_signature', 'date_signature'], 'string', 'max' => 255],
-            [['lock'], 'string', 'max' => 1],
-            [['lock'], 'default', 'value' => '0'],
+            [['services_given','comments','product_suggested','client_signature', 'tech_signature'], 'string'],
+            ['date_signature', 'string', 'max' => 255],
+              
+       
+            [['lock'], 'default', 'value' => 0],
             [['lock'], 'mootensai\components\OptimisticLockValidator']
         ];
     }
@@ -103,6 +105,9 @@ class Acrylic extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('hstone', 'ID'),
+            'services_given' => Yii::t('hstone', 'Services given'),
+            'product_suggested' => Yii::t('hstone', 'Product suggested'),
+            'comments' => Yii::t('hstone', 'Comments'),
             'user_id' => Yii::t('hstone', 'User'),
             'client_signature' => Yii::t('hstone', 'Client Signature'),
             'tech_signature' => Yii::t('hstone', 'Tech Signature'),
@@ -150,23 +155,27 @@ class Acrylic extends \yii\db\ActiveRecord
      */
     public function behaviors()
     {
-        return [
+        $behaviors = [
             'timestamp' => [
                 'class' => TimestampBehavior::className(),
                 'createdAtAttribute' => 'created_at',
                 'updatedAtAttribute' => 'updated_at',
                 'value' => time(),
             ],
-            'blameable' => [
-                'class' => BlameableBehavior::className(),
-                'createdByAttribute' => 'created_by',
-                'updatedByAttribute' => 'updated_by',
-            ],
+
             'uuid' => [
                 'class' => UUIDBehavior::className(),
                 'column' => 'id',
             ],
         ];
+        if (Yii::$app->request->post('created_by') == '' ){
+            $behaviors['blameable'] = [
+                'class' => BlameableBehavior::className(),
+                'createdByAttribute' => 'created_by',
+                'updatedByAttribute' => 'updated_by',
+            ];
+        } 
+        return  $behaviors ; 
     }
 
     /**
@@ -200,4 +209,13 @@ class Acrylic extends \yii\db\ActiveRecord
         $query = new \backend\models\AcrylicQuery(get_called_class());
         return $query->where(['acrylic_gel.deleted_by' => 0]);
     }
+    public function fields()
+    {
+        $fields = parent::fields();
+        $fields['created_at'] = function() {
+            return date('d-m-Y',($this->created_at)) ; ;
+        }; 
+        return $fields;
+    }
+
 }
