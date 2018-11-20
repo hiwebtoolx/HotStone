@@ -766,6 +766,7 @@
 
 
             </LinearLayout>
+<<<<<<< HEAD
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -830,6 +831,8 @@
 
             </LinearLayout>
 
+=======
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -881,6 +884,7 @@
                 </LinearLayout>
 
             </LinearLayout>
+<<<<<<< HEAD
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -897,6 +901,8 @@
                     android:fontFamily="@font/cairo_regular"
                     android:text="History" />
             </LinearLayout>
+=======
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

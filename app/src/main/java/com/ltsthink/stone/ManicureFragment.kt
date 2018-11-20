@@ -30,6 +30,10 @@ import com.android.volley.toolbox.Volley
 import com.github.gcacace.signaturepad.views.SignaturePad
 import com.ltsthink.stone.Models.Config
 import com.ltsthink.stone.Models.UserInfo
+<<<<<<< HEAD
+=======
+import kotlinx.android.synthetic.main.fragment_health.*
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
 import kotlinx.android.synthetic.main.fragment_manicure.*
 import kotlinx.android.synthetic.main.fragment_manicure.view.*
 import kotlinx.android.synthetic.main.fragment_scrub.*
@@ -84,6 +88,7 @@ class ManicureFragment : Fragment() {
         sSignaturePad = v.findViewById(R.id.man_client_pad) as SignaturePad
 
         val url = Config.SITE_URL + "manicures"
+<<<<<<< HEAD
         var url2 = Config.SITE_URL + "user/check-health"
 
         val jsonObj = JSONObject()
@@ -94,6 +99,10 @@ class ManicureFragment : Fragment() {
             intent.putExtra("his",6)
             startActivity(intent)
         }
+=======
+        val jsonObj = JSONObject()
+
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
         v.keratinBtn.setOnClickListener {
 
             val rD: Int = radioMaDiabetes.checkedRadioButtonId
@@ -158,6 +167,7 @@ class ManicureFragment : Fragment() {
             if (addSvgSignatureToGallery(sSignaturePad!!.getSignatureSvg())) {
                 jsonObj.put("client_signature" , sSignaturePad!!.getSignatureSvg())
             }
+<<<<<<< HEAD
             manicureObj.put("client_id", UserInfo.client_id)
 
             if(UserInfo.client_id != 0) {
@@ -182,6 +192,14 @@ class ManicureFragment : Fragment() {
                                 Toast.makeText(context, "fill customer health form first", Toast.LENGTH_LONG).show()
 
                             }
+=======
+            if(UserInfo.client_id != 0) {
+                val que = Volley.newRequestQueue(context)
+                val req = JsonObjectRequest(Request.Method.POST, url, jsonObj,
+                        Response.Listener { response ->
+                            Toast.makeText(context, getString(R.string.added), Toast.LENGTH_LONG).show()
+                            commitFrag(response.getInt("id"), "manicure")
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
                         },
                         Response.ErrorListener { error ->
                             Toast.makeText(context, error.toString(), Toast.LENGTH_LONG).show()

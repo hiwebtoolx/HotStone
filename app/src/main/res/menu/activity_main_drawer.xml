@@ -39,6 +39,7 @@
             android:id="@+id/nav_visits"
             android:icon="@drawable/ic_menu_manage"
             android:title="@string/visits" />
+<<<<<<< HEAD
 
         <item
             android:id="@+id/nav_hair_Treatment"
@@ -51,6 +52,8 @@
             android:title="Hair Colour" />
 
 
+=======
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
     </group>
     <item android:title="">
         <menu>

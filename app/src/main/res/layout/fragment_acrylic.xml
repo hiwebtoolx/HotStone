@@ -4,8 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     android:background="#91fae4f0"
     android:fitsSystemWindows="true"
+=======
+    android:fitsSystemWindows="true"
+    android:background="#91fae4f0"
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
     tools:context=".AcrylicFragment">
     <!--<include layout="@layout/event_list" />-->
     <android.support.design.widget.AppBarLayout
@@ -19,10 +24,17 @@
             android:id="@+id/toolbar_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+<<<<<<< HEAD
             android:background="@drawable/banner"
             android:fitsSystemWindows="true"
             app:contentScrim="@color/colorPrimaryLight"
             app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
+=======
+            android:fitsSystemWindows="true"
+            app:contentScrim="@color/colorPrimaryLight"
+            app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
+            android:background="@drawable/banner"
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
             app:toolbarId="@+id/toolbar">
 
             <ImageView
@@ -38,8 +50,13 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
+<<<<<<< HEAD
                 android:minHeight="25dp"
                 app:layout_collapseMode="parallax"
+=======
+                app:layout_collapseMode="parallax"
+                android:minHeight="25dp"
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
 
         </android.support.design.widget.CollapsingToolbarLayout>
@@ -57,7 +74,10 @@
             android:gravity="center"
             android:orientation="vertical"
             android:padding="10dp">
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -68,9 +88,15 @@
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/textNameLayout"
                     android:layout_width="0dp"
+<<<<<<< HEAD
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:layout_weight=".33"
+=======
+                    android:layout_weight=".33"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
                     android:gravity="start">
 
                     <android.support.v7.widget.AppCompatEditText
@@ -83,16 +109,26 @@
                         android:inputType="text"
                         android:textSize="16sp" />
                 </android.support.design.widget.TextInputLayout>
+<<<<<<< HEAD
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/textPhoneLayout"
                     android:layout_width="0dp"
+=======
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/textPhoneLayout"
+                    android:layout_width="0dp"
+                    android:layout_weight=".33"
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="10dp"
+<<<<<<< HEAD
                     android:layout_weight=".33"
+=======
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
                     android:gravity="start">
 
                     <android.support.v7.widget.AppCompatEditText
@@ -105,6 +141,7 @@
                         android:inputType="phone"
                         android:textSize="16sp" />
                 </android.support.design.widget.TextInputLayout>
+<<<<<<< HEAD
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/textEmailayout"
@@ -112,6 +149,14 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:layout_weight=".33"
+=======
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/textEmailayout"
+                    android:layout_width="0dp"
+                    android:layout_weight=".33"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
                     android:gravity="start">
 
                     <android.support.v7.widget.AppCompatEditText
@@ -125,6 +170,7 @@
                 </android.support.design.widget.TextInputLayout>
             </LinearLayout>
 
+<<<<<<< HEAD
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -146,6 +192,28 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="15dp"
                 android:clipToPadding="false"
+=======
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cairo_semibold"
+                android:padding="10dp"
+                android:text="@string/acrylic_line1"
+                android:textSize="18sp" />
+        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:layout_marginTop="15dp"
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -158,6 +226,7 @@
                     android:textSize="18sp" />
             </LinearLayout>
 
+<<<<<<< HEAD
             <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -283,6 +352,8 @@
 
             </LinearLayout>
 
+=======
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -295,7 +366,12 @@
                     android:layout_height="match_parent"
                     android:layout_weight=".50"
                     android:orientation="vertical"
+<<<<<<< HEAD
                     android:padding="5dp">
+=======
+                    android:padding="5dp"
+                    >
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
 
                     <TextView
                         android:layout_width="match_parent"
@@ -310,13 +386,21 @@
                         android:background="@color/colorPrimary" />
 
                 </LinearLayout>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight=".50"
+<<<<<<< HEAD
                     android:orientation="vertical"
                     android:padding="5dp"
+=======
+                    android:padding="5dp"
+                    android:orientation="vertical"
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
 
                     >
 
@@ -334,6 +418,7 @@
                 </LinearLayout>
 
             </LinearLayout>
+<<<<<<< HEAD
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -352,6 +437,8 @@
 
             </LinearLayout>
 
+=======
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -372,4 +459,9 @@
     </android.support.v4.widget.NestedScrollView>
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
 </android.support.design.widget.CoordinatorLayout>

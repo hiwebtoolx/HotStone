@@ -48,9 +48,13 @@
         <activity
             android:name=".LoginActivity"
             android:noHistory="true"
+<<<<<<< HEAD
             android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
+=======
+            android:theme="@style/AppTheme.NoActionBar" />
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
         <activity
             android:name=".SplashActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -60,15 +64,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
         <activity
             android:name=".Webview"
             android:label="@string/title_activity_webview"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+<<<<<<< HEAD
         <activity android:name=".HistoryActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             >
 
         </activity>
+=======
+
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
     </application>
 
 </manifest>

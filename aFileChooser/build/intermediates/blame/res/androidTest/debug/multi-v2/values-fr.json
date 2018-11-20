@@ -1,6 +1,7 @@
 {
     "logs": [
         {
+<<<<<<< HEAD
             "outputFile": "E:\\Courses JAVA C# WEB\\project review\\3bas\\Webtoolx-Hotstone2\\aFileChooser\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-fr\\values-fr.xml",
             "map": [
                 {
@@ -22,6 +23,12 @@
                 },
                 {
                     "source": "E:\\Courses JAVA C# WEB\\project review\\3bas\\Webtoolx-Hotstone2\\aFileChooser\\build\\intermediates\\packaged_res\\debug\\values-fr\\values-fr.xml",
+=======
+            "outputFile": "E:\\Android Projects\\3bas1\\Webtoolx-Hotstone\\aFileChooser\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-fr\\values-fr.xml",
+            "map": [
+                {
+                    "source": "E:\\Android Projects\\3bas1\\Webtoolx-Hotstone\\aFileChooser\\build\\intermediates\\packaged_res\\debug\\values-fr\\values-fr.xml",
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -36,6 +43,26 @@
                         "endColumns": "63,56,87,80",
                         "endOffsets": "114,171,259,441"
                     }
+<<<<<<< HEAD
+=======
+                },
+                {
+                    "source": "C:\\Users\\Abdelrahman\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\ac1b9bed49af07ae1ce5f02b7fbd52b0\\res\\values-fr\\values-fr.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "5",
+                        "startColumns": "4",
+                        "startOffsets": "264",
+                        "endColumns": "100",
+                        "endOffsets": "360"
+                    }
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
                 }
             ]
         }

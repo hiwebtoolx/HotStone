@@ -5,7 +5,10 @@ import android.content.Intent
 import android.content.res.Resources
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+<<<<<<< HEAD
 import android.util.Log
+=======
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
 import android.widget.TextView
 import android.widget.Toast
 import com.android.volley.DefaultRetryPolicy
@@ -28,6 +31,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         Paper.init(this)
+<<<<<<< HEAD
         val language: String = Paper.book().read("language", "en")
         if (language == null)
             Paper.book().write("language", "en")
@@ -70,6 +74,45 @@ class LoginActivity : AppCompatActivity() {
                     }, Response.ErrorListener { error ->
                 Toast.makeText(this, error.message, Toast.LENGTH_LONG).show()
             })
+=======
+        val language:String = Paper.book().read("language" , "en" )
+        if(language == null)
+            Paper.book().write("language" , "en")
+
+        updateView(Paper.book().read("language" , "en") as String)
+
+        //updateView(Paper.book().read("language" , "en") as String)
+
+        val url = Config.SITE_URL+"user/login"
+        val jsonObj = JSONObject()
+        btn_login.setOnClickListener{
+
+            jsonObj.put("username" , et_username.text.toString())
+            jsonObj.put("password" , et_password.text.toString())
+
+            val que = Volley.newRequestQueue(this)
+            val req = JsonObjectRequest(Request.Method.POST , url , jsonObj ,
+                    Response.Listener { response ->
+                        if(response.getString("branch_id") != "0" || response.getString("branch_id") != "0"){
+                            if(response.getInt("user_id") != 0){
+                                UserInfo.branch_id =  response.getInt("branch_id")
+                                UserInfo.user_id = response.getInt("user_id")
+                                UserInfo.email = response.getString("email")
+                                UserInfo.name = response.getString("name")
+                                startActivity(Intent(this, MainActivity::class.java))
+                            }else{
+                                Toast.makeText(this , getString(R.string.invalid_user) , Toast.LENGTH_LONG).show()
+                            }
+
+                        }else{
+                            Toast.makeText(this , getString(R.string.invalid_user) , Toast.LENGTH_LONG).show()
+                        }
+
+
+                    } , Response.ErrorListener { error->
+                Toast.makeText(this , error.message , Toast.LENGTH_LONG).show()
+            } )
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
             req.retryPolicy = DefaultRetryPolicy(60000, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT)
 
             que!!.add(req)
@@ -78,7 +121,11 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun updateView(language: String) {
+<<<<<<< HEAD
         val context: Context = LocaleHelper.setLocale(this, language)
+=======
+        val context: Context = LocaleHelper.setLocale(this , language )
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
         val resources: Resources = context.resources
 
         //val resources = context.resources

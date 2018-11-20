@@ -32,7 +32,10 @@ import com.ltsthink.stone.Models.UserInfo
 import kotlinx.android.synthetic.main.fragment_facial.*
 import kotlinx.android.synthetic.main.fragment_facial.view.*
 import kotlinx.android.synthetic.main.fragment_manicure.*
+<<<<<<< HEAD
 import kotlinx.android.synthetic.main.fragment_visits.*
+=======
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
 import org.json.JSONObject
 import java.io.File
 import java.io.FileOutputStream
@@ -81,6 +84,7 @@ class FacialFragment : Fragment() {
         em.isEnabled = false
 
         var url = Config.SITE_URL + "facials"
+<<<<<<< HEAD
         var url2 = Config.SITE_URL + "user/check-health"
 
         val jsonObj = JSONObject()
@@ -94,6 +98,12 @@ class FacialFragment : Fragment() {
             intent.putExtra("his",1)
             startActivity(intent)
         }
+=======
+        val jsonObj = JSONObject()
+
+        mSignaturePad = v.findViewById(R.id.techSignature_pad) as SignaturePad
+
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
 
         v.facialBtn.setOnClickListener {
 
@@ -109,6 +119,7 @@ class FacialFragment : Fragment() {
             val lifeS: Int = myRadioGroup.checkedRadioButtonId
             val exerS: Int = radioExercise.checkedRadioButtonId
             val pregS: Int = radioPregnancies.checkedRadioButtonId
+<<<<<<< HEAD
             val skinC: Int = radioSkinColour.checkedRadioButtonId
             val skinM: Int = radioSkinMuscletone.checkedRadioButtonId
             val skinCr: Int = radioSkinCirculation.checkedRadioButtonId
@@ -123,6 +134,13 @@ class FacialFragment : Fragment() {
             val derma: Int = radioSkinDermatosis.checkedRadioButtonId
             val toni: Int = radioSkinTonicity.checkedRadioButtonId
             val soin: Int = radioSkin_Soins_recommended.checkedRadioButtonId
+=======
+            val skinS: Int = radioSkinType.checkedRadioButtonId
+            val skinC: Int = radioSkinColour.checkedRadioButtonId
+            val skinT: Int = radioSkinTexture.checkedRadioButtonId
+            val skinCr: Int = radioSkinCirculation.checkedRadioButtonId
+            val skinM: Int = radioSkinMuscletone.checkedRadioButtonId
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
             val skinE: Int = radioSkinElasticity.checkedRadioButtonId
             val skinI: Int = radioSkinImperfections.checkedRadioButtonId
             val skinW: Int = radioSkinWrinkles.checkedRadioButtonId
@@ -133,6 +151,7 @@ class FacialFragment : Fragment() {
                 R.id.Sedentary -> jsonObj.put("life_style", "sedentary")
             }
 
+<<<<<<< HEAD
             when (hyd) {
                 R.id.superficial_dehydration -> jsonObj.put("hydration", "superficial")
                 R.id.deep_dehydration -> jsonObj.put("hydration", "dehydration")
@@ -229,25 +248,51 @@ class FacialFragment : Fragment() {
 
             }
 
+=======
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
             when (exerS) {
                 R.id.exerciseYes -> jsonObj.put("exercise", "yes")
                 R.id.exerciseNo -> jsonObj.put("exercise", "no")
             }
 
             when (pregS) {
+<<<<<<< HEAD
                 R.id.pregnanciesYes -> jsonObj.put("pregnancies", "yes")
                 R.id.pregnanciesNo -> jsonObj.put("pregnancies", "no")
             }
 
 
+=======
+                R.id.pregnantYes -> jsonObj.put("pregnancies", "yes")
+                R.id.pregnanciesNo -> jsonObj.put("pregnancies", "no")
+            }
+
+            when (skinS) {
+                R.id.skinCombination -> jsonObj.put("type", "combination")
+                R.id.skinOily -> jsonObj.put("type", "oily")
+                R.id.skinDry -> jsonObj.put("type", "dry")
+            }
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
 
             when (skinC) {
                 R.id.skinFair -> jsonObj.put("color", "fair")
                 R.id.skinDark -> jsonObj.put("color", "dark")
                 R.id.skinOlive -> jsonObj.put("color", "olive")
             }
+<<<<<<< HEAD
 
 
+=======
+            when (skinT) {
+                R.id.skinFine -> jsonObj.put("texture", "fine")
+                R.id.skinCoarse -> jsonObj.put("texture", "coarse")
+            }
+            when (skinCr) {
+                R.id.skinCirculationGood -> jsonObj.put("circulation", "good")
+                R.id.skinCirculationAverage -> jsonObj.put("circulation", "average")
+                R.id.skinCirculationPoor -> jsonObj.put("circulation", "poor")
+            }
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
             when (skinM) {
                 R.id.skinMuscleToneGood -> jsonObj.put("muscle_tone", "good")
                 R.id.skinMuscleToneAverage -> jsonObj.put("muscle_tone", "average")
@@ -284,12 +329,25 @@ class FacialFragment : Fragment() {
             jsonObj.put("updated_by", UserInfo.user_id)
             jsonObj.put("created_by", UserInfo.user_id)
             jsonObj.put("age", textAge.text)
+<<<<<<< HEAD
             jsonObj.put("product_suggested", textRetailPFacial.text)
             jsonObj.put("comments", textRCommentsFacial.text)
+=======
+//            jsonObj.put("color" , textColor.text)
+//            jsonObj.put("texture" , textTexture.text)
+//            jsonObj.put("circulation" , textCirculation.text)
+//            jsonObj.put("muscle_tone" , textMuscle.text)
+//            jsonObj.put("elasticity" , textElasticity.text)
+//            jsonObj.put("imperfections_Irregularities" , textImperfections.text)
+//            jsonObj.put("wrinkles" , textWrinkles.text)
+//            jsonObj.put("pores" , textPores.text)
+//            jsonObj.put("discoloration" , textDiscoloration.text)
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
             jsonObj.put("present_skincare_routine", textPresent.text)
             jsonObj.put("hands", textHands.text)
             jsonObj.put("feet", textFeet.text)
             jsonObj.put("miscellaneous", textMiscellaneous.text)
+<<<<<<< HEAD
             jsonObj.put("notes", null)
 
             facialObj.put("client_id", UserInfo.client_id)
@@ -332,12 +390,33 @@ class FacialFragment : Fragment() {
                                 Toast.makeText(context, "fill customer health form first", Toast.LENGTH_LONG).show()
 
                             }
+=======
+
+            if (textNotes.text.equals("")) {
+                jsonObj.put("notes", null)
+
+            }
+            else{
+                jsonObj.put("notes", textNotes.text)
+
+            }
+            if (UserInfo.client_id != 0) {
+                val que = Volley.newRequestQueue(context)
+                val req = JsonObjectRequest(Request.Method.POST, url, jsonObj,
+                        Response.Listener { response ->
+                            Toast.makeText(context, getString(R.string.added), Toast.LENGTH_LONG).show()
+                            commitFrag(response.getInt("id"), "facial")
+
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
                         }, Response.ErrorListener { error ->
                     Log.d("D", error.message.toString())
                 })
 
                 que.add(req)
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
             } else {
                 Toast.makeText(context, getString(R.string.not_found_user), Toast.LENGTH_LONG).show()
             }

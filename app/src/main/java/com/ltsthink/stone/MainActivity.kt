@@ -346,6 +346,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     loadFragment(frag1 = VisitsFragment())
                 }
             }
+<<<<<<< HEAD
             R.id.nav_hair_colour -> {
                 if (UserInfo.client_id == 0) {
                     Toast.makeText(this, getString(R.string.must_select_client), Toast.LENGTH_LONG).show()
@@ -363,6 +364,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     loadFragment(frag1 = HairTreatment())
                 }
             }
+=======
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
             R.id.nav_share -> {
 
                 loadFragment(frag1 = MainFragment())

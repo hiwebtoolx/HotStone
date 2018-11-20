@@ -26,7 +26,10 @@ import com.ltsthink.stone.Utils.IOnBackPressed
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.fragment_main.*
 import kotlinx.android.synthetic.main.fragment_main.view.*
+<<<<<<< HEAD
 import org.json.JSONArray
+=======
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
 import org.json.JSONObject
 
 
@@ -41,6 +44,7 @@ class MainFragment : Fragment() {
         val clientName: TextView = v.findViewById(R.id.clientName) as TextView
         val clinetEmail: TextView = v.clientEmail as TextView
         val clientPhone: TextView = v.clientPhone as TextView
+<<<<<<< HEAD
 
         clientName.text = UserInfo.client_name
         clinetEmail.text = UserInfo.client_email
@@ -61,13 +65,34 @@ class MainFragment : Fragment() {
         }
         v.update.setOnClickListener {
             showUpdateUserDialog()
+=======
+        clientName.text = UserInfo.client_name
+        clinetEmail.text = UserInfo.client_email
+        clientPhone.text = UserInfo.client_phone
+
+
+        if (clientName.text == "") {
+            v.client_info.visibility = View.GONE
+            v.clientBtn.visibility = View.GONE
+            //searchTextPhone.isEnabled = false
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
         }
         v.searchBtn.setOnClickListener {
             if (searchTextPhone.text.toString() != "") {
                 showCreateCategoryDialog(searchTextPhone.text.toString())
 
                 if (UserInfo.client_id != 0) {
+<<<<<<< HEAD
 
+=======
+//                    val searbBT:Button =  v.findViewById(R.id.searchBtn) as Button
+//                    searbBT.isClickable = false
+//                    se
+
+//                    v.searchBtn.isEnabled = false
+//                    v.searchBtn.isClickable = false
+                    //v.searchBtn.background =
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
 
                 }
             } else {
@@ -92,8 +117,11 @@ class MainFragment : Fragment() {
             clientPhone.text = ""
             v.client_info.visibility = View.GONE
             v.clientBtn.visibility = View.GONE
+<<<<<<< HEAD
             v.update.visibility = View.GONE
             historyBtn.visibility = View.GONE
+=======
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
             Toast.makeText(context, "Cleared", Toast.LENGTH_LONG).show()
         }
 
@@ -270,6 +298,7 @@ class MainFragment : Fragment() {
         builder.show()
     }
 
+<<<<<<< HEAD
 
     fun showUpdateUserDialog() {
 
@@ -336,6 +365,8 @@ class MainFragment : Fragment() {
         builder.show()
     }
 
+=======
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
     private fun commitFrag() {
         val bundle = Bundle()
         val fragment = HealthFragment()

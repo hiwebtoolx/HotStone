@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <merger version="3"><dataSet config="main"><source path="E:\Courses JAVA C# WEB\project review\3bas\Webtoolx-Hotstone2\aFileChooser\src\main\assets"/><source path="E:\Courses JAVA C# WEB\project review\3bas\Webtoolx-Hotstone2\aFileChooser\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="E:\Courses JAVA C# WEB\project review\3bas\Webtoolx-Hotstone2\aFileChooser\src\debug\assets"/></dataSet></merger>
+=======
+<merger version="3"><dataSet config="main"><source path="E:\Android Projects\3bas1\Webtoolx-Hotstone\aFileChooser\src\main\assets"/><source path="E:\Android Projects\3bas1\Webtoolx-Hotstone\aFileChooser\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="E:\Android Projects\3bas1\Webtoolx-Hotstone\aFileChooser\src\debug\assets"/></dataSet></merger>
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d

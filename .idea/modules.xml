@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/Webtoolx-Hotstone2.iml" filepath="$PROJECT_DIR$/Webtoolx-Hotstone2.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/Webtoolx-Hotstone.iml" filepath="$PROJECT_DIR$/Webtoolx-Hotstone.iml" />
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
       <module fileurl="file://$PROJECT_DIR$/aFileChooser/aFileChooser.iml" filepath="$PROJECT_DIR$/aFileChooser/aFileChooser.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>

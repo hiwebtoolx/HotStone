@@ -29,6 +29,10 @@ import com.android.volley.toolbox.Volley
 import com.github.gcacace.signaturepad.views.SignaturePad
 import com.ltsthink.stone.Models.Config
 import com.ltsthink.stone.Models.UserInfo
+<<<<<<< HEAD
+=======
+import kotlinx.android.synthetic.main.fragment_facial.*
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
 import kotlinx.android.synthetic.main.fragment_keratin.*
 import kotlinx.android.synthetic.main.fragment_keratin.view.*
 import org.json.JSONObject
@@ -54,11 +58,14 @@ class KeratinFragment : Fragment() {
         txtPhone = v.findViewById(R.id.textPhone) as AppCompatEditText
 
 
+<<<<<<< HEAD
         v.keratin_his.setOnClickListener {
             val intent = Intent(context, HistoryActivity::class.java)
             intent.putExtra("his", 5)
             startActivity(intent)
         }
+=======
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
 
         txtPhone.onFocusChangeListener = View.OnFocusChangeListener { v, hasFocus ->
             if (txtPhone.text.toString().isEmpty()) {
@@ -71,10 +78,14 @@ class KeratinFragment : Fragment() {
         }
         verifyStoragePermissions(context as Activity)
         var url = Config.SITE_URL + "keratins"
+<<<<<<< HEAD
         var url2 = Config.SITE_URL + "user/check-health"
 
         val jsonObj = JSONObject()
         val keratinObj = JSONObject()
+=======
+        val jsonObj = JSONObject()
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
         val nm: AppCompatEditText = v.findViewById(R.id.textName) as AppCompatEditText
         val ph: AppCompatEditText = v.findViewById(R.id.textPhone) as AppCompatEditText
         val em: AppCompatEditText = v.findViewById(R.id.textEmail) as AppCompatEditText
@@ -132,9 +143,12 @@ class KeratinFragment : Fragment() {
             jsonObj.put("hair_specialist_name", textSpecialist.text.toString())
             jsonObj.put("product_name", textProduct.text.toString())
             jsonObj.put("notes", textKeratinNotes.text.toString())
+<<<<<<< HEAD
             jsonObj.put("product_suggested", textRetailProduct.text.toString())
             jsonObj.put("comments", textCommentsProduct.text.toString())
 
+=======
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
 
             val signatureBitmap = mSignaturePad!!.getSignatureBitmap()
             val signatureBitmap2 = sSignaturePad!!.getSignatureBitmap()
@@ -146,6 +160,7 @@ class KeratinFragment : Fragment() {
                 //Toast.makeText(context, mSignaturePad!!.getSignatureSvg(), Toast.LENGTH_SHORT).show()
                 jsonObj.put("client_signature", sSignaturePad!!.getSignatureSvg())
             }
+<<<<<<< HEAD
             keratinObj.put("client_id", UserInfo.client_id)
 
             if (UserInfo.client_id != 0) {
@@ -178,6 +193,14 @@ class KeratinFragment : Fragment() {
                                 Toast.makeText(context, "fill customer health form first", Toast.LENGTH_LONG).show()
 
                             }
+=======
+            if (UserInfo.client_id != 0) {
+                val que = Volley.newRequestQueue(context)
+                val req = JsonObjectRequest(Request.Method.POST, url, jsonObj,
+                        Response.Listener { response ->
+                            Toast.makeText(context, getString(R.string.added), Toast.LENGTH_LONG).show()
+                            commitFrag(response.getInt("id"), "keratin")
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
 
                         }, Response.ErrorListener { error ->
                     Log.d("D", error.message.toString())

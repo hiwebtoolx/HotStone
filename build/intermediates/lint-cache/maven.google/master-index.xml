@@ -109,5 +109,8 @@
   <com.google.android.ads/>
   <androidx.biometric/>
   <androidx.concurrent/>
+<<<<<<< HEAD
   <androidx.activity/>
+=======
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
 </metadata>

@@ -74,6 +74,10 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_below="@+id/textPhoneLayout"
+<<<<<<< HEAD
+=======
+                        android:layout_marginBottom="40dp"
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="50dp"
                         android:fontFamily="@font/cairo_regular"
@@ -81,6 +85,7 @@
                         android:text="@string/clear"
                         android:textColor="#fff" />
 
+<<<<<<< HEAD
                     <Button
                         android:id="@+id/historyBtn"
                         style="@style/SolidButtonStyle"
@@ -98,6 +103,15 @@
 
                 </RelativeLayout>
 
+=======
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                </LinearLayout>
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
 
                 <LinearLayout
                     android:id="@+id/client_info"
@@ -143,6 +157,7 @@
 
                 </LinearLayout>
 
+<<<<<<< HEAD
                 <Button
                     android:id="@+id/update"
                     style="@style/SolidButtonStyle"
@@ -151,6 +166,8 @@
                     android:layout_gravity="center"
                     android:fontFamily="@font/cairo_regular"
                     android:text="@string/update" />
+=======
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
 
                 <LinearLayout
                     android:layout_width="wrap_content"

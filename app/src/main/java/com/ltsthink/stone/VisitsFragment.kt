@@ -45,15 +45,26 @@ class VisitsFragment : Fragment() {
     private val PERMISSIONS_STORAGE = arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE)
     private var mSignaturePad: SignaturePad? = null
     private var sSignaturePad: SignaturePad? = null
+<<<<<<< HEAD
     lateinit var txtPhoneLayout: TextInputLayout
     lateinit var txtPhone: AppCompatEditText
+=======
+    lateinit var txtPhoneLayout : TextInputLayout
+    lateinit var txtPhone : AppCompatEditText
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         val v = inflater.inflate(R.layout.fragment_visits, container, false)
+<<<<<<< HEAD
         val nm: AppCompatEditText = v.findViewById(R.id.textName) as AppCompatEditText
         val ph: AppCompatEditText = v.findViewById(R.id.textPhone) as AppCompatEditText
         val em: AppCompatEditText = v.findViewById(R.id.textEmail) as AppCompatEditText
+=======
+        val nm: AppCompatEditText =  v.findViewById(R.id.textName) as AppCompatEditText
+        val ph: AppCompatEditText =  v.findViewById(R.id.textPhone) as AppCompatEditText
+        val em: AppCompatEditText =  v.findViewById(R.id.textEmail) as AppCompatEditText
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
 
         nm.isEnabled = false
         ph.isEnabled = false
@@ -75,6 +86,7 @@ class VisitsFragment : Fragment() {
             }
         }
 
+<<<<<<< HEAD
         v.visit_his.setOnClickListener {
             val intent = Intent(context, HistoryActivity::class.java)
             intent.putExtra("his", 7)
@@ -139,12 +151,47 @@ class VisitsFragment : Fragment() {
                         },
                         Response.ErrorListener { error ->
                             Log.e("TAG", "error " + error)
+=======
+        nm.setText(UserInfo.client_name , TextView.BufferType.EDITABLE)
+        ph.setText(UserInfo.client_phone , TextView.BufferType.EDITABLE)
+        em.setText(UserInfo.client_email , TextView.BufferType.EDITABLE)
+
+        mSignaturePad = v.findViewById(R.id.visits_th_pad) as SignaturePad
+
+
+        var url = Config.SITE_URL + "visits"
+        val jsonObj = JSONObject()
+
+        v.visitsBtn.setOnClickListener {
+            jsonObj.put("user_id" , UserInfo.client_id)
+            jsonObj.put("branch_id" , UserInfo.branch_id)
+            jsonObj.put("updated_by" ,UserInfo.user_id)
+            jsonObj.put("created_by" , UserInfo.user_id)
+            jsonObj.put("treatment_given" , textTreatment.text)
+            jsonObj.put("retail_product" , textRetailProduct.text)
+            jsonObj.put("comments" , textCommentsProduct.text)
+            if (addSvgSignatureToGallery(mSignaturePad!!.getSignatureSvg())) {
+                jsonObj.put("tech_signature" , mSignaturePad!!.getSignatureSvg())
+            }
+            if(UserInfo.client_id != 0) {
+                val que = Volley.newRequestQueue(context)
+                val req = JsonObjectRequest(Request.Method.POST, url, jsonObj,
+                        Response.Listener { response ->
+                            Toast.makeText(context, getString(R.string.added), Toast.LENGTH_LONG).show()
+                            commitFrag()
+                        },
+                        Response.ErrorListener { error ->
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
                             Toast.makeText(context, error.toString(), Toast.LENGTH_LONG).show()
                         })
                 req.retryPolicy = DefaultRetryPolicy(60000, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT)
 
                 que!!.add(req)
+<<<<<<< HEAD
             } else {
+=======
+            }else{
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
                 Toast.makeText(context, getString(R.string.not_found_user), Toast.LENGTH_LONG).show()
             }
         }
@@ -152,6 +199,7 @@ class VisitsFragment : Fragment() {
 
     }
 
+<<<<<<< HEAD
     private fun existUser(phone: String): Boolean {
         val url = Config.SITE_URL + "user/search"
         var exist: Boolean = false
@@ -161,25 +209,50 @@ class VisitsFragment : Fragment() {
         val req = JsonObjectRequest(Request.Method.POST, url, jsonObj,
                 Response.Listener { response ->
                     if (response.getString("phone") != "") {
+=======
+    private fun existUser(phone:String): Boolean {
+        val url = Config.SITE_URL + "user/search"
+        var exist:Boolean = false
+        val jsonObj = JSONObject()
+        jsonObj.put("phone" , phone)
+        val que = Volley.newRequestQueue(context)
+        val req = JsonObjectRequest(Request.Method.POST , url , jsonObj ,
+                Response.Listener { response ->
+                    if(response.getString("phone") != ""){
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
                         UserInfo.client_email = response.getString("email")
                         UserInfo.client_id = response.getInt("id")
                         UserInfo.client_name = response.getString("name")
                         UserInfo.client_phone = response.getString("phone")
                         exist = true
+<<<<<<< HEAD
                     } else {
+=======
+                    }else{
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
                         UserInfo.client_email = ""
                         UserInfo.client_id = 0
                         UserInfo.client_name = ""
                         UserInfo.client_phone = ""
                     }
+<<<<<<< HEAD
                 }, Response.ErrorListener { error ->
             Log.d("D", error.message.toString())
         })
+=======
+                } , Response.ErrorListener { error->
+            Log.d("D" , error.message.toString())
+        } )
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
         que.add(req)
         return exist
     }
 
+<<<<<<< HEAD
     private fun commitFrag() {
+=======
+    private fun commitFrag( ){
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
         val bundle = Bundle()
         val fragment = MainFragment()
         fragment.arguments = bundle
@@ -190,6 +263,12 @@ class VisitsFragment : Fragment() {
     }
 
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
     override fun onRequestPermissionsResult(requestCode: Int,
                                             permissions: Array<String>, grantResults: IntArray) {
         when (requestCode) {

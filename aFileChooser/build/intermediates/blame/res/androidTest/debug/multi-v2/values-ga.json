@@ -1,10 +1,17 @@
 {
     "logs": [
         {
+<<<<<<< HEAD
             "outputFile": "E:\\Courses JAVA C# WEB\\project review\\3bas\\Webtoolx-Hotstone2\\aFileChooser\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-ga\\values-ga.xml",
             "map": [
                 {
                     "source": "E:\\Courses JAVA C# WEB\\project review\\3bas\\Webtoolx-Hotstone2\\aFileChooser\\build\\intermediates\\packaged_res\\debug\\values-ga\\values-ga.xml",
+=======
+            "outputFile": "E:\\Android Projects\\3bas1\\Webtoolx-Hotstone\\aFileChooser\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-ga\\values-ga.xml",
+            "map": [
+                {
+                    "source": "E:\\Android Projects\\3bas1\\Webtoolx-Hotstone\\aFileChooser\\build\\intermediates\\packaged_res\\debug\\values-ga\\values-ga.xml",
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

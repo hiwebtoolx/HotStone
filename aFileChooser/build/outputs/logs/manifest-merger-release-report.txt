@@ -1,5 +1,6 @@
 -- Merging decision tree log ---
 manifest
+<<<<<<< HEAD
 ADDED from E:\Courses JAVA C# WEB\project review\3bas\Webtoolx-Hotstone2\aFileChooser\src\main\AndroidManifest.xml:17:2-22:12
 INJECTED from E:\Courses JAVA C# WEB\project review\3bas\Webtoolx-Hotstone2\aFileChooser\src\main\AndroidManifest.xml:17:2-22:12
 INJECTED from E:\Courses JAVA C# WEB\project review\3bas\Webtoolx-Hotstone2\aFileChooser\src\main\AndroidManifest.xml:17:2-22:12
@@ -23,3 +24,28 @@ INJECTED from E:\Courses JAVA C# WEB\project review\3bas\Webtoolx-Hotstone2\aFil
 		ADDED from E:\Courses JAVA C# WEB\project review\3bas\Webtoolx-Hotstone2\aFileChooser\src\main\AndroidManifest.xml:20:15-40
 		INJECTED from E:\Courses JAVA C# WEB\project review\3bas\Webtoolx-Hotstone2\aFileChooser\src\main\AndroidManifest.xml
 		INJECTED from E:\Courses JAVA C# WEB\project review\3bas\Webtoolx-Hotstone2\aFileChooser\src\main\AndroidManifest.xml
+=======
+ADDED from E:\Android Projects\3bas1\Webtoolx-Hotstone\aFileChooser\src\main\AndroidManifest.xml:17:2-22:12
+INJECTED from E:\Android Projects\3bas1\Webtoolx-Hotstone\aFileChooser\src\main\AndroidManifest.xml:17:2-22:12
+INJECTED from E:\Android Projects\3bas1\Webtoolx-Hotstone\aFileChooser\src\main\AndroidManifest.xml:17:2-22:12
+	package
+		ADDED from E:\Android Projects\3bas1\Webtoolx-Hotstone\aFileChooser\src\main\AndroidManifest.xml:18:5-40
+		INJECTED from E:\Android Projects\3bas1\Webtoolx-Hotstone\aFileChooser\src\main\AndroidManifest.xml
+		INJECTED from E:\Android Projects\3bas1\Webtoolx-Hotstone\aFileChooser\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\Android Projects\3bas1\Webtoolx-Hotstone\aFileChooser\src\main\AndroidManifest.xml:17:12-70
+uses-sdk
+ADDED from E:\Android Projects\3bas1\Webtoolx-Hotstone\aFileChooser\src\main\AndroidManifest.xml:20:5-43
+INJECTED from E:\Android Projects\3bas1\Webtoolx-Hotstone\aFileChooser\src\main\AndroidManifest.xml:20:5-43
+INJECTED from E:\Android Projects\3bas1\Webtoolx-Hotstone\aFileChooser\src\main\AndroidManifest.xml:20:5-43
+INJECTED from E:\Android Projects\3bas1\Webtoolx-Hotstone\aFileChooser\src\main\AndroidManifest.xml:20:5-43
+INJECTED from E:\Android Projects\3bas1\Webtoolx-Hotstone\aFileChooser\src\main\AndroidManifest.xml:20:5-43
+	android:targetSdkVersion
+		INJECTED from E:\Android Projects\3bas1\Webtoolx-Hotstone\aFileChooser\src\main\AndroidManifest.xml
+		ADDED from E:\Android Projects\3bas1\Webtoolx-Hotstone\aFileChooser\src\main\AndroidManifest.xml:20:5-43
+		INJECTED from E:\Android Projects\3bas1\Webtoolx-Hotstone\aFileChooser\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from E:\Android Projects\3bas1\Webtoolx-Hotstone\aFileChooser\src\main\AndroidManifest.xml:20:15-40
+		INJECTED from E:\Android Projects\3bas1\Webtoolx-Hotstone\aFileChooser\src\main\AndroidManifest.xml
+		INJECTED from E:\Android Projects\3bas1\Webtoolx-Hotstone\aFileChooser\src\main\AndroidManifest.xml
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d

@@ -1,10 +1,17 @@
 {
     "logs": [
         {
+<<<<<<< HEAD
             "outputFile": "E:\\Courses JAVA C# WEB\\project review\\3bas\\Webtoolx-Hotstone2\\aFileChooser\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-v24\\values-v24.xml",
             "map": [
                 {
                     "source": "C:\\Users\\MAGIC\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\0344b3c8c076ff9b0511931a8b56ba91\\res\\values-v24\\values-v24.xml",
+=======
+            "outputFile": "E:\\Android Projects\\3bas1\\Webtoolx-Hotstone\\aFileChooser\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-v24\\values-v24.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Abdelrahman\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\a650f0f95889fcc2d0fbac4c9a6c6514\\res\\values-v24\\values-v24.xml",
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

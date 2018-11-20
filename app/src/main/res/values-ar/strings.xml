@@ -14,9 +14,12 @@
     <string name="sedentary">مستقرة</string>
     <string name="pregnancies">الحمل</string>
     <string name="yes">نعم</string>
+<<<<<<< HEAD
     <string name="update_client">تعديل بيانات العميل</string>
     <string name="update">تعديل</string>
 
+=======
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
     <string name="no">لا</string>
     <string name="ar">عربي</string>
     <string name="en">English</string>

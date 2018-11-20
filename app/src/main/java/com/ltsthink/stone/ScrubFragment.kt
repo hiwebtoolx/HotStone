@@ -17,6 +17,10 @@ import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+<<<<<<< HEAD
+=======
+import com.ltsthink.stone.Remote.RetrofitClient
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
 import kotlinx.android.synthetic.main.fragment_scrub.view.*
 import org.json.JSONObject
 import retrofit2.Retrofit
@@ -32,7 +36,10 @@ import android.support.design.widget.TextInputLayout
 import android.support.v4.app.FragmentActivity
 import android.support.v4.content.ContentResolverCompat
 import android.support.v7.widget.AppCompatEditText
+<<<<<<< HEAD
 import android.support.v7.widget.PopupMenu
+=======
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
 import android.util.Log
 import android.widget.*
 import com.android.volley.DefaultRetryPolicy
@@ -40,14 +47,33 @@ import com.github.gcacace.signaturepad.views.SignaturePad
 import com.ipaulpro.afilechooser.utils.FileUtils
 import com.ltsthink.stone.Models.Config
 import com.ltsthink.stone.Models.UserInfo
+<<<<<<< HEAD
 import kotlinx.android.synthetic.main.fragment_scrub.*
+=======
+import com.ltsthink.stone.Utils.ProgressRequestBody
+import kotlinx.android.synthetic.main.fragment_keratin.*
+import kotlinx.android.synthetic.main.fragment_scrub.*
+import okhttp3.MediaType
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
+import okhttp3.ResponseBody
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.converter.gson.GsonConverterFactory
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
 import java.io.OutputStreamWriter
 
 
+<<<<<<< HEAD
 class ScrubFragment : Fragment() {
+=======
+
+class ScrubFragment : Fragment()  {
+
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
 
 
     private val REQUEST_EXTERNAL_STORAGE = 1
@@ -56,6 +82,7 @@ class ScrubFragment : Fragment() {
     private var sSignaturePad: SignaturePad? = null
     private var mClearButton: Button? = null
     private var mSaveButton: Button? = null
+<<<<<<< HEAD
     private var scrubId: Int = 0
     lateinit var emailLayout: TextInputLayout
     lateinit var emaiInput: AppCompatEditText
@@ -64,6 +91,15 @@ class ScrubFragment : Fragment() {
     lateinit var txtPhone: AppCompatEditText
     lateinit var textHam: TextInputLayout
     lateinit var txtHammamType: AppCompatEditText
+=======
+    lateinit var emailLayout : TextInputLayout
+    lateinit var emaiInput: AppCompatEditText
+    var userExist:Boolean = false
+    lateinit var txtPhoneLayout : TextInputLayout
+    lateinit var txtPhone : AppCompatEditText
+    lateinit var textHam : TextInputLayout
+    lateinit var txtHammamType : AppCompatEditText
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
 
@@ -94,6 +130,7 @@ class ScrubFragment : Fragment() {
         mSignaturePad = v.findViewById(R.id.scrubSignaturePad) as SignaturePad
 
         sSignaturePad = v.findViewById(R.id.scrubSignaturePad1) as SignaturePad
+<<<<<<< HEAD
         val nm: AppCompatEditText = v.findViewById(R.id.textName) as AppCompatEditText
         val ph: AppCompatEditText = v.findViewById(R.id.textPhone) as AppCompatEditText
         val em: AppCompatEditText = v.findViewById(R.id.textEmail) as AppCompatEditText
@@ -101,11 +138,21 @@ class ScrubFragment : Fragment() {
         nm.setText(UserInfo.client_name, TextView.BufferType.EDITABLE)
         ph.setText(UserInfo.client_phone, TextView.BufferType.EDITABLE)
         em.setText(UserInfo.client_email, TextView.BufferType.EDITABLE)
+=======
+        val nm:AppCompatEditText =  v.findViewById(R.id.textName) as AppCompatEditText
+        val ph:AppCompatEditText =  v.findViewById(R.id.textPhone) as AppCompatEditText
+        val em:AppCompatEditText =  v.findViewById(R.id.textEmail) as AppCompatEditText
+
+        nm.setText(UserInfo.client_name , TextView.BufferType.EDITABLE)
+        ph.setText(UserInfo.client_phone , TextView.BufferType.EDITABLE)
+        em.setText(UserInfo.client_email , TextView.BufferType.EDITABLE)
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
 
         nm.isEnabled = false
         ph.isEnabled = false
         em.isEnabled = false
         var url = Config.SITE_URL + "scrubs"
+<<<<<<< HEAD
         var url2 = Config.SITE_URL + "user/check-health"
 
         val jsonObj = JSONObject()
@@ -260,6 +307,24 @@ class ScrubFragment : Fragment() {
             }
             when (pregD) {
                 R.id.pregnantYes -> jsonObj.put("are_you_pregnant", 1)
+=======
+        val jsonObj = JSONObject()
+        v.scrubBtn.setOnClickListener {
+
+            val id: Int = myRadioGroup.checkedRadioButtonId
+            val pregD : Int = pregnantRadioGroup.checkedRadioButtonId
+            val delvD : Int = deliveredRadioGroup.checkedRadioButtonId
+            val receD : Int = surgeryRadioGroup.checkedRadioButtonId
+
+            when(receD){
+                R.id.surgeryYes -> jsonObj.put("did_you_have_a_surgery_operation_during_the_last_3_months" , 1)
+            }
+            when(delvD){
+                R.id.deliveredYes -> jsonObj.put("are_you_recently_delivered" , 1)
+            }
+            when(pregD){
+                R.id.pregnantYes -> jsonObj.put("are_you_pregnant" , 1)
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
             }
             when (id) {
                 R.id.Firm -> jsonObj.put("how_do_you_prefer_the_scrubbing", "Firm")
@@ -269,6 +334,7 @@ class ScrubFragment : Fragment() {
 
                 }
             }
+<<<<<<< HEAD
             jsonObj.put("user_id", UserInfo.client_id)
             jsonObj.put("branch_id", UserInfo.branch_id)
             jsonObj.put("updated_by", UserInfo.user_id)
@@ -326,6 +392,42 @@ class ScrubFragment : Fragment() {
 
                 que!!.add(req)
             } else {
+=======
+            jsonObj.put("user_id" , UserInfo.client_id)
+            jsonObj.put("branch_id" , UserInfo.branch_id)
+            jsonObj.put("updated_by" ,UserInfo.user_id)
+            jsonObj.put("created_by" , UserInfo.user_id)
+
+            jsonObj.put("which_hammam_or_body_scrub_do_you_prefer" , textHamamType.text)
+            jsonObj.put("when_was_your_last_laser_session" , textlaser.text)
+            jsonObj.put("when_last_time_you_remove_the_hair" , textshaving.text)
+            jsonObj.put("If_yes_when" , textPeeling.text)
+
+            if (addSvgSignatureToGallery(mSignaturePad!!.getSignatureSvg())) {
+                //Toast.makeText(context, mSignaturePad!!.getSignatureSvg(), Toast.LENGTH_SHORT).show()
+                jsonObj.put("tech_signature" , mSignaturePad!!.getSignatureSvg())
+            }
+            if (addSvgSignatureToGallery(sSignaturePad!!.getSignatureSvg())) {
+                //Toast.makeText(context, mSignaturePad!!.getSignatureSvg(), Toast.LENGTH_SHORT).show()
+                jsonObj.put("client_signature" , sSignaturePad!!.getSignatureSvg())
+            }
+            if(UserInfo.client_id != 0){
+            val que = Volley.newRequestQueue(context)
+            val req = JsonObjectRequest(Request.Method.POST, url, jsonObj,
+                    Response.Listener {
+                        response ->
+                        Toast.makeText(context, getString(R.string.added), Toast.LENGTH_LONG).show()
+                        commitFrag(response.getInt("id") , "scrub" )
+                    },
+                    Response.ErrorListener {
+                        error ->
+                        Toast.makeText(context, error.toString(), Toast.LENGTH_LONG).show()
+                    })
+            req.retryPolicy = DefaultRetryPolicy(60000, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT)
+
+            que!!.add(req)
+            }else{
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
                 Toast.makeText(context, getString(R.string.not_found_user), Toast.LENGTH_LONG).show()
             }
         }
@@ -336,6 +438,7 @@ class ScrubFragment : Fragment() {
     }
 
 
+<<<<<<< HEAD
     private fun existUser(phone: String): Boolean {
         val url = Config.SITE_URL + "user/search"
         var exist: Boolean = false
@@ -345,17 +448,33 @@ class ScrubFragment : Fragment() {
         val req = JsonObjectRequest(Request.Method.POST, url, jsonObj,
                 Response.Listener { response ->
                     if (response.getString("phone") != "") {
+=======
+    private fun existUser(phone:String): Boolean {
+        val url = Config.SITE_URL + "user/search"
+        var exist:Boolean = false
+        val jsonObj = JSONObject()
+        jsonObj.put("phone" , phone)
+        val que = Volley.newRequestQueue(context)
+        val req = JsonObjectRequest(Request.Method.POST , url , jsonObj ,
+                Response.Listener { response ->
+                    if(response.getString("phone") != ""){
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
                         UserInfo.client_email = response.getString("email")
                         UserInfo.client_id = response.getInt("id")
                         UserInfo.client_name = response.getString("name")
                         UserInfo.client_phone = response.getString("phone")
                         exist = true
+<<<<<<< HEAD
                     } else {
+=======
+                    }else{
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
                         UserInfo.client_email = ""
                         UserInfo.client_id = 0
                         UserInfo.client_name = ""
                         UserInfo.client_phone = ""
                     }
+<<<<<<< HEAD
                 }, Response.ErrorListener { error ->
             Log.d("D", error.message.toString())
         })
@@ -368,6 +487,19 @@ class ScrubFragment : Fragment() {
         val fragment = RatingFragment()
         bundle.putString("module", module)
         bundle.putInt("id", id)
+=======
+                } , Response.ErrorListener { error->
+            Log.d("D" , error.message.toString())
+        } )
+        que.add(req)
+        return exist
+    }
+    private fun commitFrag(id:Int , module:String ){
+        val bundle = Bundle()
+        val fragment = RatingFragment()
+        bundle.putString("module", module)
+        bundle.putInt("id" , id)
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
         fragment.arguments = bundle
         (context as FragmentActivity).supportFragmentManager.beginTransaction()
                 //.addToBackStack(null)
@@ -376,6 +508,12 @@ class ScrubFragment : Fragment() {
     }
 
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
     override fun onRequestPermissionsResult(requestCode: Int,
                                             permissions: Array<String>, grantResults: IntArray) {
         when (requestCode) {
@@ -397,7 +535,10 @@ class ScrubFragment : Fragment() {
         }
         return file
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
     private fun loadTextWithProgress(handleProgress: (Int) -> Unit): String {
         for (i in 1..10) {
             handleProgress(i * 100 / 10) // in %
@@ -405,7 +546,10 @@ class ScrubFragment : Fragment() {
         }
         return "Loaded Text"
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
     @Throws(IOException::class)
     fun saveBitmapToJPG(bitmap: Bitmap, photo: File) {
         val newBitmap = Bitmap.createBitmap(bitmap.width, bitmap.height, Bitmap.Config.ARGB_8888)

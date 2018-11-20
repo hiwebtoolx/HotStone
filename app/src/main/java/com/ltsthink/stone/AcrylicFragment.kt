@@ -21,7 +21,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+<<<<<<< HEAD
 import android.widget.RadioGroup
+=======
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
 import android.widget.TextView
 import android.widget.Toast
 import com.android.volley.Request
@@ -31,10 +34,14 @@ import com.android.volley.toolbox.Volley
 import com.github.gcacace.signaturepad.views.SignaturePad
 import com.ltsthink.stone.Models.Config
 import com.ltsthink.stone.Models.UserInfo
+<<<<<<< HEAD
 import kotlinx.android.synthetic.main.fragment_acrylic.*
 import kotlinx.android.synthetic.main.fragment_acrylic.view.*
 import kotlinx.android.synthetic.main.fragment_health.*
 import kotlinx.android.synthetic.main.fragment_keratin.*
+=======
+import kotlinx.android.synthetic.main.fragment_acrylic.view.*
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
 import org.json.JSONObject
 import java.io.File
 import java.io.FileOutputStream
@@ -49,8 +56,13 @@ class AcrylicFragment : Fragment() {
     private val PERMISSIONS_STORAGE = arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE)
     private var mSignaturePad: SignaturePad? = null
     private var sSignaturePad: SignaturePad? = null
+<<<<<<< HEAD
     lateinit var txtPhoneLayout: TextInputLayout
     lateinit var txtPhone: AppCompatEditText
+=======
+    lateinit var txtPhoneLayout : TextInputLayout
+    lateinit var txtPhone : AppCompatEditText
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
@@ -64,12 +76,15 @@ class AcrylicFragment : Fragment() {
 
 
 
+<<<<<<< HEAD
         v.acrylic_his.setOnClickListener {
             val intent = Intent(context, HistoryActivity::class.java)
             intent.putExtra("his",8)
             startActivity(intent)
         }
 
+=======
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
         txtPhone.onFocusChangeListener = View.OnFocusChangeListener { v, hasFocus ->
             if (txtPhone.text.toString().isEmpty()) {
                 txtPhoneLayout.isErrorEnabled = true
@@ -79,6 +94,7 @@ class AcrylicFragment : Fragment() {
                 existUser(v.textPhone.text.toString())
             }
         }
+<<<<<<< HEAD
         val nm: AppCompatEditText = v.findViewById(R.id.textName) as AppCompatEditText
         val ph: AppCompatEditText = v.findViewById(R.id.textPhone) as AppCompatEditText
         val em: AppCompatEditText = v.findViewById(R.id.textEmail) as AppCompatEditText
@@ -87,6 +103,16 @@ class AcrylicFragment : Fragment() {
         ph.setText(UserInfo.client_phone, TextView.BufferType.EDITABLE)
         em.setText(UserInfo.client_email, TextView.BufferType.EDITABLE)
         Toast.makeText(context, "" + UserInfo.client_id, Toast.LENGTH_LONG).show()
+=======
+        val nm: AppCompatEditText =  v.findViewById(R.id.textName) as AppCompatEditText
+        val ph: AppCompatEditText =  v.findViewById(R.id.textPhone) as AppCompatEditText
+        val em: AppCompatEditText =  v.findViewById(R.id.textEmail) as AppCompatEditText
+
+        nm.setText(UserInfo.client_name , TextView.BufferType.EDITABLE)
+        ph.setText(UserInfo.client_phone , TextView.BufferType.EDITABLE)
+        em.setText(UserInfo.client_email , TextView.BufferType.EDITABLE)
+
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
         nm.isEnabled = false
         ph.isEnabled = false
         em.isEnabled = false
@@ -94,6 +120,7 @@ class AcrylicFragment : Fragment() {
         mSignaturePad = v.findViewById(R.id.acrylic_th_pad) as SignaturePad
 
         sSignaturePad = v.findViewById(R.id.acrylic_client_pad) as SignaturePad
+<<<<<<< HEAD
         val radio = v.findViewById<RadioGroup>(R.id.radioServicesGiven)
         // val given: Int = radioServicesGiven.checkedRadioButtonId
         val given: Int = radio.checkedRadioButtonId
@@ -110,12 +137,22 @@ class AcrylicFragment : Fragment() {
             jsonObj.put("product_suggested", textRetailProduct2.text.toString())
             jsonObj.put("comments", textCommentsProduct2.text.toString())
 
+=======
+
+        v.acrylicBtn.setOnClickListener {
+
+            jsonObj.put("user_id" , UserInfo.client_id)
+            jsonObj.put("branch_id" , UserInfo.branch_id)
+            jsonObj.put("updated_by" , UserInfo.user_id)
+            jsonObj.put("created_by" , UserInfo.user_id)
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
 
             val signatureBitmap = mSignaturePad!!.getSignatureBitmap()
             val signatureBitmap2 = sSignaturePad!!.getSignatureBitmap()
 
             if (addSvgSignatureToGallery(mSignaturePad!!.getSignatureSvg())) {
                 //Toast.makeText(context, mSignaturePad!!.getSignatureSvg(), Toast.LENGTH_SHORT).show()
+<<<<<<< HEAD
                 jsonObj.put("tech_signature", mSignaturePad!!.getSignatureSvg())
             }
             if (addSvgSignatureToGallery(sSignaturePad!!.getSignatureSvg())) {
@@ -135,11 +172,33 @@ class AcrylicFragment : Fragment() {
 
                 que.add(req)
             } else {
+=======
+                jsonObj.put("tech_signature" , mSignaturePad!!.getSignatureSvg())
+            }
+            if (addSvgSignatureToGallery(sSignaturePad!!.getSignatureSvg())) {
+                //Toast.makeText(context, mSignaturePad!!.getSignatureSvg(), Toast.LENGTH_SHORT).show()
+                jsonObj.put("client_signature" , sSignaturePad!!.getSignatureSvg())
+            }
+            if(UserInfo.client_id != 0){
+            val que = Volley.newRequestQueue(context)
+            val req = JsonObjectRequest(Request.Method.POST , url , jsonObj ,
+                    Response.Listener { response ->
+                        Toast.makeText(context , "Successfully Added" , Toast.LENGTH_LONG).show()
+                        commitFrag(response.getInt("id") , "acrylic"  )
+
+                    } , Response.ErrorListener { error->
+                Log.d("D" , error.message.toString())
+            } )
+
+            que.add(req)
+            }else{
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
                 Toast.makeText(context, "User Not Found! Please add user first ", Toast.LENGTH_LONG).show()
             }
         }
         return v
     }
+<<<<<<< HEAD
 
     private fun existUser(phone: String): Boolean {
         val url = Config.SITE_URL + "user/search"
@@ -150,12 +209,24 @@ class AcrylicFragment : Fragment() {
         val req = JsonObjectRequest(Request.Method.POST, url, jsonObj,
                 Response.Listener { response ->
                     if (response.getString("phone") != "") {
+=======
+    private fun existUser(phone:String): Boolean {
+        val url = Config.SITE_URL + "user/search"
+        var exist:Boolean = false
+        val jsonObj = JSONObject()
+        jsonObj.put("phone" , phone)
+        val que = Volley.newRequestQueue(context)
+        val req = JsonObjectRequest(Request.Method.POST , url , jsonObj ,
+                Response.Listener { response ->
+                    if(response.getString("phone") != ""){
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
                         UserInfo.client_email = response.getString("email")
                         UserInfo.client_id = response.getInt("id")
                         UserInfo.client_name = response.getString("name")
                         UserInfo.client_phone = response.getString("phone")
                         exist = true
                     }
+<<<<<<< HEAD
                 }, Response.ErrorListener { error ->
             Log.d("D", error.message.toString())
         })
@@ -168,6 +239,19 @@ class AcrylicFragment : Fragment() {
         val fragment = RatingFragment()
         bundle.putString("module", module)
         bundle.putInt("id", id)
+=======
+                } , Response.ErrorListener { error->
+            Log.d("D" , error.message.toString())
+        } )
+        que.add(req)
+        return exist
+    }
+    private fun commitFrag(id:Int , module:String ){
+        val bundle = Bundle()
+        val fragment = RatingFragment()
+        bundle.putString("module", module)
+        bundle.putInt("id" , id)
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
         fragment.arguments = bundle
         (context as FragmentActivity).supportFragmentManager.beginTransaction()
                 //.addToBackStack(null)

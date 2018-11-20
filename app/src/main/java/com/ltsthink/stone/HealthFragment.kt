@@ -47,11 +47,19 @@ class HealthFragment : Fragment() {
     private val REQUEST_EXTERNAL_STORAGE = 1
     private val PERMISSIONS_STORAGE = arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE)
     private var mSignaturePad: SignaturePad? = null
+<<<<<<< HEAD
     private var healthId: Int = 0
     lateinit var txtPhoneLayout: TextInputLayout
     lateinit var txtPhone: AppCompatEditText
 
     var userExist: Boolean = false
+=======
+    private var healthId:Int = 0
+    lateinit var txtPhoneLayout : TextInputLayout
+    lateinit var txtPhone : AppCompatEditText
+
+    var userExist:Boolean = false
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
@@ -77,6 +85,7 @@ class HealthFragment : Fragment() {
 
         val bundle = this.arguments
 
+<<<<<<< HEAD
         val s: AppCompatEditText = v.findViewById(R.id.textHealthPhone) as AppCompatEditText
         val m: AppCompatEditText = v.findViewById(R.id.textHealthName) as AppCompatEditText
         val e: AppCompatEditText = v.findViewById(R.id.textHealthEmail) as AppCompatEditText
@@ -84,13 +93,25 @@ class HealthFragment : Fragment() {
         s.setText(UserInfo.client_phone, TextView.BufferType.EDITABLE)
         m.setText(UserInfo.client_name, TextView.BufferType.EDITABLE)
         e.setText(UserInfo.client_email, TextView.BufferType.EDITABLE)
+=======
+        val s:AppCompatEditText =  v.findViewById(R.id.textHealthPhone) as AppCompatEditText
+        val m:AppCompatEditText = v.findViewById(R.id.textHealthName) as AppCompatEditText
+        val e:AppCompatEditText = v.findViewById(R.id.textHealthEmail) as AppCompatEditText
+        var client_id:Int = 0
+        s.setText(UserInfo.client_phone , TextView.BufferType.EDITABLE)
+        m.setText(UserInfo.client_name , TextView.BufferType.EDITABLE)
+        e.setText(UserInfo.client_email , TextView.BufferType.EDITABLE)
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
 
         s.isEnabled = false
         m.isEnabled = false
         e.isEnabled = false
         var url = Config.SITE_URL + "healths"
+<<<<<<< HEAD
         var url2 = Config.SITE_URL + "user/check-health"
         val healthobj2 = JSONObject()
+=======
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
         val jsonObj = JSONObject()
         val userObj = JSONObject()
         val healthObj = JSONObject()
@@ -99,6 +120,7 @@ class HealthFragment : Fragment() {
 
 
 
+<<<<<<< HEAD
         if (UserInfo.client_id != 0) {
             val chest: RadioButton = v.findViewById(R.id.chestYes) as RadioButton
             val lifeS: RadioButton = v.findViewById(R.id.styleActive) as RadioButton
@@ -180,16 +202,109 @@ class HealthFragment : Fragment() {
                                 preg.isChecked = true
                             }
                             if (response.getInt("exercise") == 1) {
+=======
+        if(UserInfo.client_id != 0){
+            val chest :RadioButton = v.findViewById(R.id.chestYes) as RadioButton
+            val lifeS :RadioButton = v.findViewById(R.id.styleActive) as RadioButton
+            val heartD:RadioButton = v.findViewById(R.id.heartYes) as RadioButton
+            val blood :RadioButton = v.findViewById(R.id.bloodYes) as RadioButton
+            val veins :RadioButton = v.findViewById(R.id.veinsYes) as RadioButton
+            val alerg :RadioButton = v.findViewById(R.id.allergiesYes) as RadioButton
+            val bronG :RadioButton = v.findViewById(R.id.bronchitisYes) as RadioButton
+            val athT  :RadioButton = v.findViewById(R.id.asthmaYes) as RadioButton
+            val dizA  :RadioButton = v.findViewById(R.id.dizzinessYes) as RadioButton
+            val bronT :RadioButton = v.findViewById(R.id.headachesYes) as RadioButton
+            val chemA :RadioButton = v.findViewById(R.id.chemotherapyYes) as RadioButton
+            val diab  :RadioButton = v.findViewById(R.id.diabetesYes) as RadioButton
+            val epil  :RadioButton = v.findViewById(R.id.ePilepsyYes) as RadioButton
+            val other :RadioButton = v.findViewById(R.id.otherYes) as RadioButton
+            val aler  :RadioButton = v.findViewById(R.id.allergicYes) as RadioButton
+
+            val life : RadioButton = v.findViewById(R.id.styleActive) as RadioButton
+            val preg : RadioButton = v.findViewById(R.id.pregnanciesYes) as RadioButton
+            val exer : RadioButton = v.findViewById(R.id.exerciseYes) as RadioButton
+
+            val textAge:AppCompatEditText = v.findViewById(R.id.textAge) as AppCompatEditText
+            val textAle:AppCompatEditText = v.findViewById(R.id.textNotes) as AppCompatEditText
+            val textOth:AppCompatEditText = v.findViewById(R.id.textOtherDesc) as AppCompatEditText
+            Toast.makeText(context , "Fetching Data" , Toast.LENGTH_LONG).show()
+            healthObj.put("id" , UserInfo.client_id)
+
+            val hQue = Volley.newRequestQueue(context)
+            val hReq = JsonObjectRequest(Request.Method.POST, Config.SITE_URL + "health/search", healthObj,
+                    Response.Listener { response ->
+                        if(response.getInt("id") != 0){
+                            if(response.getInt("heart_disease") == 1){
+                                heartD.isChecked = true
+                            }
+                            if(response.getInt("high_blood_pressure") == 1){
+                                blood.isChecked = true
+                            }
+                            if(response.getInt("allergies") == 1){
+                                alerg.isChecked = true
+                            }
+                            if(response.getInt("allergic") == 1){
+                                aler.isChecked = true
+                            }
+                            if(response.getInt("otherـdiseases") == 1){
+                                other.isChecked = true
+                            }
+                            if(response.getInt("e_pilepsy") == 1){
+                                epil.isChecked = true
+                            }
+                            if(response.getInt("diabetes") == 1){
+                                diab.isChecked = true
+                            }
+                            if(response.getInt("chemotherapy") == 1){
+                                chemA.isChecked = true
+                            }
+                            if(response.getInt("chest_pain") == 1){
+                                chest.isChecked = true
+                            }
+                            if(response.getInt("varicose_veins") == 1){
+                                veins.isChecked = true
+                            }
+                            if(response.getInt("bronchitis") == 1){
+                                bronG.isChecked = true
+                            }
+                            if(response.getInt("asthma") == 1){
+                                athT.isChecked = true
+                            }
+                            if(response.getInt("dizziness") == 1){
+                                dizA.isChecked = true
+                            }
+                            if(response.getInt("headaches") == 1){
+                                bronT.isChecked = true
+                            }
+
+                            if(response.getInt("life_style") == 1){
+                                life.isChecked = true
+                            }
+                            if(response.getInt("pregnancies") == 1){
+                                preg.isChecked = true
+                            }
+                            if(response.getInt("exercise") == 1){
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
                                 exer.isChecked = true
                             }
 
                             healthId = response.getInt("id")
+<<<<<<< HEAD
                             textAge.setText(response.getString("age"), TextView.BufferType.EDITABLE)
                             textAle.setText(response.getString("what_causes_you_allergies"), TextView.BufferType.EDITABLE)
                             textOth.setText(response.getString("otherـdiseases_desc"), TextView.BufferType.EDITABLE)
                         }
 
 
+=======
+                            textAge.setText(response.getString("age") , TextView.BufferType.EDITABLE)
+                            textAle.setText(response.getString("what_causes_you_allergies") , TextView.BufferType.EDITABLE)
+                            textOth.setText(response.getString("otherـdiseases_desc") , TextView.BufferType.EDITABLE)
+                        }
+
+
+
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
                     }, Response.ErrorListener { error ->
                 Log.d("D", error.message.toString())
             })
@@ -228,7 +343,11 @@ class HealthFragment : Fragment() {
             val lifeS: Int = myRadioGroup.checkedRadioButtonId
 
             //Toast.makeText(context , UserInfo.client_id.toString() , Toast.LENGTH_LONG).show()
+<<<<<<< HEAD
             jsonObj.put("user_id", UserInfo.client_id)
+=======
+            jsonObj.put("user_id",  UserInfo.client_id)
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
             jsonObj.put("branch_id", UserInfo.branch_id)
             jsonObj.put("updated_by", UserInfo.user_id)
             jsonObj.put("created_by", UserInfo.user_id)
@@ -295,6 +414,7 @@ class HealthFragment : Fragment() {
 
 
 
+<<<<<<< HEAD
             //healthobj2.put("client_id", UserInfo.client_id)
 
             if (UserInfo.client_id != 0) {
@@ -327,6 +447,31 @@ class HealthFragment : Fragment() {
             } else {
                 Toast.makeText(context, getString(R.string.not_found_user), Toast.LENGTH_LONG).show()
             }
+=======
+
+            if(UserInfo.client_id != 0){
+                Thread(Runnable {
+                    val que = Volley.newRequestQueue(context)
+                    val req = JsonObjectRequest(Request.Method.POST, url, jsonObj,
+                            Response.Listener { response ->
+
+                                Toast.makeText(context, getString(R.string.added), Toast.LENGTH_LONG).show()
+                                commitFrag()
+
+                            }, Response.ErrorListener { error ->
+                        Log.d("D", jsonObj.toString())
+                    })
+                    que.add(req)
+                }).start()
+            }else{
+                Toast.makeText(context, getString(R.string.not_found_user), Toast.LENGTH_LONG).show()
+            }
+
+
+
+
+
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
 
 
         }
@@ -334,6 +479,7 @@ class HealthFragment : Fragment() {
         return v
     }
 
+<<<<<<< HEAD
     private fun existUser(phone: String): Boolean {
         val url = Config.SITE_URL + "user/search"
         var exist: Boolean = false
@@ -343,17 +489,33 @@ class HealthFragment : Fragment() {
         val req = JsonObjectRequest(Request.Method.POST, url, jsonObj,
                 Response.Listener { response ->
                     if (response.getString("phone") != "") {
+=======
+    private fun existUser(phone:String): Boolean {
+        val url = Config.SITE_URL + "user/search"
+        var exist:Boolean = false
+        val jsonObj = JSONObject()
+        jsonObj.put("phone" , phone)
+        val que = Volley.newRequestQueue(context)
+        val req = JsonObjectRequest(Request.Method.POST , url , jsonObj ,
+                Response.Listener { response ->
+                    if(response.getString("phone") != ""){
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
                         UserInfo.client_email = response.getString("email")
                         UserInfo.client_id = response.getInt("id")
                         UserInfo.client_name = response.getString("name")
                         UserInfo.client_phone = response.getString("phone")
                         exist = true
+<<<<<<< HEAD
                     } else {
+=======
+                    }else{
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
                         UserInfo.client_email = ""
                         UserInfo.client_id = 0
                         UserInfo.client_name = ""
                         UserInfo.client_phone = ""
                     }
+<<<<<<< HEAD
                 }, Response.ErrorListener { error ->
             Log.d("D", error.message.toString())
         })
@@ -362,6 +524,15 @@ class HealthFragment : Fragment() {
     }
 
     private fun commitFrag() {
+=======
+                } , Response.ErrorListener { error->
+            Log.d("D" , error.message.toString())
+        } )
+        que.add(req)
+        return exist
+    }
+    private fun commitFrag( ){
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
         val bundle = Bundle()
         val fragment = MainFragment()
         fragment.arguments = bundle

@@ -34,7 +34,11 @@ class RatingFragment : Fragment() {
         val v = inflater.inflate(R.layout.fragment_rating, container, false)
         val smileRating = v.findViewById(R.id.smile_rating) as SmileRating
         val bundle = this.arguments
+<<<<<<< HEAD
         val module = bundle!!.getString("module")
+=======
+        val module = bundle!!.getString("module" )
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
         val record_id = bundle!!.getInt("id" )
 
         var url = Config.SITE_URL + "user/rate"

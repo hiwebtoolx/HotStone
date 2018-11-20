@@ -731,6 +731,7 @@
                     </LinearLayout>
                 </LinearLayout>
 
+<<<<<<< HEAD
                 <HorizontalScrollView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -875,6 +876,10 @@
 
                 </LinearLayout>
 
+=======
+
+
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -936,6 +941,7 @@
                     android:orientation="horizontal">
 
                     <android.support.v7.widget.AppCompatButton
+<<<<<<< HEAD
                         android:id="@+id/manicure_his"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -951,6 +957,8 @@
                     android:orientation="horizontal">
 
                     <android.support.v7.widget.AppCompatButton
+=======
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
                         android:id="@+id/keratinBtn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

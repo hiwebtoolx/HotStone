@@ -6,7 +6,10 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:background="#91fae4f0"
+<<<<<<< HEAD
     android:id="@+id/rating_fragment"
+=======
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
     tools:context=".RatingFragment">
     <!--<include layout="@layout/event_list" />-->
     <android.support.design.widget.AppBarLayout

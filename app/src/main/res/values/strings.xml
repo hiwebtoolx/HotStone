@@ -217,9 +217,12 @@
     <string name="take_a_moment_to_evaluate_this_service">Take a moment to evaluate this service</string>
     <string name="new_client">New Client</string>
     <string name="add_new">Add New Client</string>
+<<<<<<< HEAD
     <string name="update_client">Update Client Data</string>
     <string name="update">UPDATE</string>
 
+=======
+>>>>>>> 0026944e737158b551053a24feabf29d5e80170d
     <string name="not_found_user">User Not Found! Please add user first</string>
     <string name="added">Successfully Added</string>
     <string name="thank_you">Thank You!! :)</string>
