@@ -1,0 +1,97 @@
+ ✔ Hair treatment consultation form (new) @done (18-10-30 19:57)
+
+
+
+
+ ✔ Hair colour consultation form (new) @done (18-10-30 21:12)
+ 
+ # Hair analysis 
+   
+ ✔ Texture: Fine, Average, Thick(Check box list) @done (18-10-30 21:12)
+ 
+ ✔ Condition: Dry, Normal, Oily(Check box list) @done (18-10-30 21:12)
+ 
+ ✔ Natural form: Straight, Wavy, Curly(Check box list) @done (18-10-30 21:12)
+
+ ✔ Natural colour: Light, Tone(Check box list) @done (18-10-30 21:12)
+ 
+ ✔ Amount of grey: Front, Back, Full(Check box list) @done (18-10-30 21:12)
+ 
+ ✔ Existing hair treatment: Perm, Keratin, Highlighted, Bleach, Tint, Rincage(Check box list) @done (18-10-30 21:12)
+ 
+ ✔ Scalp and skin condition: Normal, Sensitive. (Check box list) @done (18-10-30 21:12)
+ 
+ ✔ Colouration Given: Roots, Highlight, Lowlight, Rincage, Ampoule, Colour, contouring(Check box list) @done (18-10-30 21:12)
+ ✔ Number Colour used:  Textbox @done (18-10-30 21:12)
+ ✔ Suggested product: Textbox @done (18-10-30 21:12)
+ ✔ Comment :textbox @done (18-10-30 21:12)
+
+
+ ✔ Keratine consultation form --> (edit) @done (18-10-29 01:32)
+
+    # Add at the end of the consult form #
+ ✔ Product Suggested : textbox @done (18-10-29 01:32)
+ ✔ Comment :textbox @done (18-10-29 01:32)
+
+
+ ✔ Facial treatment consult form --> (edit) @done (18-10-29 03:10)
+
+     ✔ Circulation: erythema, erythrose, telangiectasia, rosacea(Check box list) // change values // @done (18-10-29 03:09)
+     ✔ Hydration: superficial dehydration, deep dehydration(Check box list) @done (18-10-29 03:09)
+     ✔ Teint: scramble, bilious, pink, dull, pale(Check box list) @done (18-10-29 03:09)
+     ✔ Texture: Normal, fine, thick(Check box list) // change values // @done (18-10-29 03:09)
+     ✔ Type: dry, oily, combination, mature, sensitive, normal, acne(Check box list)  // change values // @done (18-10-29 03:09)
+     ✔ Secretions: adipic, asphyxia, comedone, seborrheic, acne, mixed, normal(Check box list) @done (18-10-29 03:09)
+     ✔ Circulation anomaly:  angioma, ruby points, stellate angiomas(Check box list) @done (18-10-29 03:09)
+     ✔ Pigmentation anomaly: Ephelides, chloasma, senile spots, albinism, vitiligo(Check box list) @done (18-10-29 03:09)
+     ✔ More anomalies: aqueous pockets, fat pockets, milia grains, double chin, keratosis, cysts, scars, naevus, warts(Check box list) @done (18-10-29 03:09)
+     ✔ Dermatosis: eczema, psoriasis, herpes, (Check box list) @done (18-10-29 03:09)
+     ✔ Tonicity: firm, light, loose(Check box list) @done (18-10-29 03:09)
+     ✔ Present skincare routine : section not a Field // ensure is a section and all child inputs @done (18-10-29 03:09)  
+     ✔ Soins recommended: soothe, nourish, clarify, normalize, moisturize, anti-age, energize(Check box list) @done (18-10-29 03:09)
+     ✔ Product Suggested : (Check box list) @done (18-10-29 03:09)
+     ✔ Comment : textbox @done (18-10-29 03:09)
+
+
+
+
+ ✔ Manicure and Pedicure Consult form --> (edit) @done (18-10-29 03:27)
+
+       # Add at the end of the consult form #
+     ✔ Treatment Given: simple manicure, simple pedicure, spa manicure, spa pedicure, anti-ageing, paraffine(Check box list) @done (18-10-29 03:27)
+     ✔ Product Suggested : textbox @done (18-10-29 03:27)
+     ✔ Comment :textbox @done (18-10-29 03:27)
+
+
+ ☐ Acrilyc and Gel Consult form --> (edit)
+
+       # Add at the end of the consult form #
+     ✔ Services given: Apply acrylic, remove acrylic, remove and apply(Check box list) @done (18-10-29 04:28)
+     ✔ Product Suggested : textbox @done (18-10-29 04:28)
+     ✔ Comment :textbox @done (18-10-29 04:28)
+
+
+ ☐ Visits form
+
+     # change the whole form #
+   ☐ Full name :textbox
+   ☐ Email address : textbox
+   ☐ Phone number textbox
+   ☐ What interests you about our products or services ? textbox
+   ☐ Product Suggested : textbox
+   ☐ Comment :textbox
+
+
+
+
+
+
+
+Quetions :: 
+
+# Do u need this fields in view facial ?
+
+[ .. Date Of Last Period , Allergies , Medication , Varicose Veins , Epilepsy , Respiratory , Major Illness , Major Surgery , Kidney , Cardiac , Metal Pins , Diet Present .. ]
+
+
+    
