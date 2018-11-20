@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="38px" height="48px" viewBox="0 0 38 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Rectangle 6 Copy 10</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="59.8065044%" x2="50%" y2="0%" id="linearGradient-1">
+            <stop stop-color="#C85D99" offset="0%"></stop>
+            <stop stop-color="#B56A94" offset="100%"></stop>
+        </linearGradient>
+        <polygon id="path-2" points="705 3363 735 3363 735 3403 719.754098 3393 705 3403"></polygon>
+        <filter x="-26.7%" y="-10.0%" width="153.3%" height="140.0%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.709803922   0 0 0 0 0.415686275   0 0 0 0 0.580392157  0 0 0 0.200718976 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="HotStone--Home" transform="translate(-701.000000, -3363.000000)">
+            <g id="Rectangle-6-Copy-10" transform="translate(720.000000, 3383.000000) scale(-1, 1) translate(-720.000000, -3383.000000) ">
+                <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+            </g>
+        </g>
+    </g>
+</svg>
